@@ -1,1 +1,217 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "\\documentclass[11pt,a4paper,twoside,italian]{toptesi}\n\\usepackage[utf8x]{inputenc}\n\\usepackage[italian]{babel}\n\\usepackage[T1]{fontenc}\\usepackage{lmodern}\n\\usepackage{lipsum}\n\n\\ateneo{Politecnico di Torino}\n\\FacoltaDi{}\n\\facolta[III]{Facoltà di Ingegneria}\n%\\Materia{Remote sensing}\n\n\\titolo{Applicazioni della computer vision alle macchine di collaudo di dispositivi elettronici}\n\\corsodilaurea{Ingegneria Informatica}\n\n\\candidato{Andrea \\textsc{Fonti}}\n\n\\relatore{prof.\\ Matteo Sonza Reorda}% per la laurea e/o il dottorato\n%\\secondorelatore{dipl.~ing.~Werner von Braun}% per la laurea magistrale\n\\def\\Candidato{Candidato}\n\n\n%%%%%%% Tutore\n%\\tutore{ing.~Karl Von Braun}% per il dottorato\n\\tutoreaziendale{xxx}\n\\NomeTutoreAziendale{Supervisore aziendale\\\\SPEA}\n\\sedutadilaurea{\\textsc{Anno~accademico} 2014-2015}% per la laurea magistrale\n\\logosede{logotesi.png}\n\n\n\n\\begin{document}\\errorcontextlines=9% debugging\n\\frontespizio\n\\sommario\nQuesto sarà il sommario della toptesi\n\n\\indici\n\n\\chapter{Introduzione}\n\n\\chapter{Computer Vision}\n\\section{Ispezione Manuale vs Ispezione automatica}\n\\section{La luce}\n\\section{Sensori}\n\\section{Algoritmi}\n\\subsection{Image Processing}\n\\subsection{Object detection and recognition}	\n\n\\chapter{Stato dell'arte}\n\n\\section{Software}\n\\subsection{Opencv}\n\\subsection{Cognex}\n\\subsection{Halcon}\n\\subsection{Mil}\n\n\\section{Hardware}\n\\subsection{GigE Vision Cameras}\n\\subsection{USB3 Vision Cameras}\n\\subsection{Camera Link Cameras}\n\n\\chapter{Automatic Optical Inspection}\n\\section{Ispezione dei dispositivi elettronici}\n\\subsection{Industria elettronica}\n\\subsection{Industria dei semiconduttori}\n\\section{Macchine SPEA}\n\\subsection{Flying probes}\n\\subsection{Pick and Place handlers}\n\\subsection{Handler Input Output Units}\n\\chapter{Spea.Vision Library}\n\\section{Requisiti}\n\\section{Scelte progettuali}\n\\section{Architettura}\n\\section{Spea Optical Test App}\n\n\\chapter{Caso di studio, VUH160 Ispezione dei contatti su package BGA}\n\n\n%\\conclusioni\n\\end{document}\n",
+			"file": "main.tex",
+			"file_size": 1997,
+			"file_write_time": 130519894556567200,
+			"settings":
+			{
+				"buffer_size": 1996,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/src/tesi.sublime-project",
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/src/main.tex",
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/out/main.pdf",
+		"/data/Andrea/Politecnico/01NRKOV - Modellistica e controllo di sistemi aerospaziali/WorkspaceRelazione/relazione-mcsa/src/arsclassica_preamble.tex",
+		"/home/andreaf/.config/sublime-text-3/Packages/User/customMake.sublime-build",
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/tesi.sublime-workspace",
+		"/data/Andrea/Politecnico/03GSDOV-Sicurezza Dei Sistemi Informatici/Tesina_old/Makefile",
+		"/data/Andrea/Politecnico/01NRKOV - Modellistica e controllo di sistemi aerospaziali/WorkspaceRelazione/relazione-mcsa/README.md",
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/revision.tex",
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/Makefile",
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/Makefile.include",
+		"/data/Andrea/Politecnico/Tesi/tesi-polito/Main.tex"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"\\lipsum",
+			"laureadndo",
+			"candidato",
+			"logo",
+			"classica",
+			"ind"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1996,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1222,
+								1222
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 510.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "tesi.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 321.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

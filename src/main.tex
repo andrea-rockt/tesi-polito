@@ -1,62 +1,25 @@
-\documentclass[11pt,a4paper,twoside,oldstyle,classica,italian]{toptesi}
-\usepackage[utf8x]{inputenc}
-\usepackage[italian]{babel}
-\usepackage[T1]{fontenc}\usepackage{lmodern}
-\usepackage{lipsum}
+\input{preamble}
 
-\ateneo{Politecnico di Torino}
-\FacoltaDi{}
-\facolta[III]{Facoltà di Ingegneria}
-%\Materia{Remote sensing}
+\begin{document}
 
-\titolo{Applicazioni della computer vision alle macchine di collaudo di dispositivi elettronici}
-\corsodilaurea{Ingegneria Informatica}
-
-\candidato{Andrea \textsc{Fonti}}
-
-\relatore{prof.\ Matteo Sonza Reorda}% per la laurea e/o il dottorato
-%\secondorelatore{dipl.~ing.~Werner von Braun}% per la laurea magistrale
-\def\Candidato{Candidato}
-
-
-%%%%%%% Tutore
-%\tutore{ing.~Karl Von Braun}% per il dottorato
-\tutoreaziendale{xxx}
-\NomeTutoreAziendale{Supervisore aziendale\\SPEA}
-\sedutadilaurea{\textsc{Anno~accademico} 2014-2015}% per la laurea magistrale
-\logosede{logotesi.png}
-
-
-
-\begin{document}\errorcontextlines=9% debugging
 \frontespizio
-\sommario
-Questo sarà il sommario della toptesi
+
+\input{chapters/sommario}
 
 \indici
 
-\chapter{Introduzione}
+\input{chapters/introduzione}
 
-\chapter{Stato dell'arte}
+\input{chapters/computer-vision}
 
-\section{Software}
-\subsection{Opencv}
-\subsection{Cognex}
-\subsection{Halcon}
-\subsection{Mil}
+\input{chapters/stato-dell-arte}
 
-\section{Hardware}
-\subsection{GigE Vision Cameras}
-\subsection{USB3 Vision Cameras}
-\subsection{Camera Link Cameras}
+\input{chapters/automatic-optical-inspection}
 
-\chapter{AOI - Automatic Optical Inspection}
+\input{chapters/spea-vision-library}
 
-\chapter{Spea.Vision Library}
+\input{chapters/caso-di-studio}
 
-\section{Spea Optical Test App}
+\input{chapters/conclusioni}
 
-\chapter{Caso di studio, Ispezione dei contatti su package BGA}
-
-%\conclusioni
 \end{document}

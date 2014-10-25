@@ -1,15 +1,9 @@
-{ 
-	"folders": [
+{
+	"folders":
+	[
 		{
-		 "folder_exclude_patterns": [
-			"tmp",
-			"out"
-		 ], 
-		 "follow_symlinks": true,
-			"path": "/data/Andrea/Politecnico/Tesi/tesi-polito",
-		 "file_exclude_patterns": [
-			"*.sublime-project"
-		 ]
+			"follow_symlinks": true,
+			"path": "."
 		}
-	 ]
+	]
 }

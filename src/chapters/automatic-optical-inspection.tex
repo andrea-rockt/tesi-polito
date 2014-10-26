@@ -1,20 +1,212 @@
 \chapter{Automatic Optical Inspection}
-Questo capitolo dovrebbe parlare in dettaglio dell'ispezione
-ottica automatizzata in particolare ponendo enfasi sull'ispezione di
-dispositivi elettronici
+
 \section{Ispezione dei dispositivi elettronici}
-\subsection{Industria elettronica}
-questa sotto sezione dovrebbe discutere dell'industria elettronica
-quindi principalmente dell'ispezione di circuiti stampati, ambito
-\subsection{Industria dei semiconduttori}
-questa sotto sezione dovrebbe discutere dell'industria dei semiconduttori
-quindi dell'ispezione dei die o dei package (finishing) 
+Nuovi sviluppi nell’assemblaggio di PCB non possono avvenire se non con cambiamenti corrispondenti
+nella tecnologia di controllo della qualità.
+Il test in-circuit è stato per anni il mezzo principale per la rilevazione e la diagnosi dei difetti poichè
+rimuovendo la barriera del “design for testability” (La realizzazione di un progetto introducendo parti e
+componenti accessorie volte a facilitare o a permettere test altrimenti impossibili) ha reso possibile
+realizzare sistemi complessi senza la paura di non poterli testare. Il test in circuit è stato per tanto un
+approccio semplice ed universale al problema del controllo qualità nell’industria elettronica ma risulta
+essere sempre più difficile applicarlo a causa della miniaturizzazione che rende spesso impraticabile il test
+tradizionale per mezzo di sistemi a sonde mobili o a letto d’aghi.
+Considerando altre tecnologie quale il boundary scan, l’ispezione a raggi x, l’ispezione ottica manuale e
+l’ispezione ottica automatica nessuna è in grado di sostituire totalmente il test in-circuit ma è in grado di
+complementarlo efficientemente.
+Tutti i processi usano l’ispezione ottica manuale. Gli ispettori in uno stabilimento di assemblaggio ben
+gestito spesso sprecano la maggior parte del loro tempo ispezionando prodotti non difettosi e usano solo
+una frazione del loro tempo in maniera proficua al miglioramento ed al controllo della qualità (ovvero
+quando un difetto si presenta loro) esiste un modo tramite cui possiamo focalizzare la potenza dell’occhio
+umano solo sui difetti?
+Se un sistema AOI è utilizzato per coadiuvare l’ispezione manuale il numero di ispettori decresce (la
+semplicità del processo cresce) e la consistenza dell’ispezione migliora. Consideriamo una scheda dove
+5000 saldature di cui solo 10 sono inadeguate, se una macchina AOI la ispezionasse prima dell’uomo ed
+approvasse tutte le saldature corrette rimarrebbe solo da verificare manualmente le 10 saldature riportate
+come critiche dal sistema automatico, date le ambiguità delle performance umane (dovute a stanchezza e
+differenze tra individui diversi) adottare questa metodologia porterebbe ad una maggiore efficienza nel controllo qualità
+
+Un sistema AOI non aggiunge nessuna nuovo concetto allo stabilimento, si limita a automatizzare una
+categoria di ispezioni già realizzata manualmente.
+
+\subsection {Principio di funzionamento di un sistema AOI}
+
+Un sitema AOI è in grado di acquisire milioni di pixel in una frazione di secondo, questi dati vengono
+utilizzati per l’ispezione visuale e per misure di precisione.
+Il sistema AOI scansisce visualmente la superfice della scheda elettronica, la scheda è illuminata da
+differenti sorgenti luminose ed osservata da uno scanner o da un numero arbitrario di telecamere ad alta
+definizione, ogni produttore di sistemi AOI sviluppa degli algoritmi properietari di ispezione e di tecniche
+di illuminazione, ciò si traduce in differenti punti di forza o debolezza a seconda della tipologia di
+prodotto ispezionato e delle tecniche impiegate.
+Illuminare correttamente la parte è una fase critica per un sistema AOI, esso deve essere in grado di
+vedere la parte da ispezionare ma soprattutto le caratteristiche distintive del difetto da individuare, la luce amplifica i dettagli salienti e sopprime dettagli categorizzabili come rumore, ad esempio molti prodotti
+riflettono la luce causando aree di intensa illuminazione nell’immagini, ciò potrebbe oscurare i dettagli
+ricercati durante l’ispezione.
+Il dispositivo di imaging traduce la luce riflessa dalla parte da ispezionare in un immagine elettronica che
+verrà successivamente elaborata.
+Il cervello di un sistema AOI è il “vision computer”, tale computer analizza l’immagine per estrarre misure,
+conteggi di parti, colori o altre features visuali necessari all’ispezione.
+
+\section {Tipologie di ispezione ottica automatica delle schede elettroniche}
+
+\subsection{Presenza di un componente}
+Obiettivo di questo test è verificare la presenza di un componente sulla scheda, ciò assolve al doppio
+compito di verifica del componente corretto e controllo dell’assenza di un componente non corretto, i
+possibili scenari mitigati sono:
+\begin{itemize}
+\item Durante un passaggio della catena produttiva costituito da una saldatura manuale l’addetto ha
+dimenticato il componente oppure ne ha saldato uno sbagliato;
+\item Durante un passaggio della catena produttiva costituito da una posa automatica del componente
+e successiva saldatura automatica il sistema pick and place non ha posizionato correttamente il
+componente o il processo di saldatura automatica non è stato affidabile provocandone il distacco.
+Un test di presenza ottica può completare la copertura dei possibili difetti rimediando a limitazioni del
+test in-circuit come l’assenza di un capacità di filtro in parallelo ad altre;
+\end{itemize}
+
+\subsection{Posizionamento di un componente}
+Obiettivo di questo test è verificare che il montaggio di un componente sia avvenuto correttamente e che
+rispetti determinate specifiche meccaniche quali:
+\begin{itemize}
+\item Skew (rotazione del componente lungo l’asse perpendicolare alla scheda);
+\item Offset (traslazione del componente rispetto al baricentro atteso);
+\end{itemize}
+
+O che non si siano verificate delle condizioni di posizionamento anomalo:
+\begin{itemize}
+\item Componente saldato capovolto.;
+\item Componente saldato verticalemente sulla scheda. (Billboarding);
+\item Componente parzialmente rialzato lungo un lato (Tombstoning);
+\item Componente saldato con polarità errata;
+\end{itemize}
+
+\subsection{Identificazione di un componente}
+Obiettivo di questo test è garantire la tracciabilità delle parti montate su di una scheda o delle schede
+testate tramite l’inserimento di un codice nel database del sistema CIM se presente
+\begin{itemize}
+\item Verifica ottica dei caratteri
+\item Optical Character Recognition
+\item Lettura di codici a barre
+\end{itemize}
+
+\subsection{Test della saldatura}
+Obiettivo di questo test è garantire che il processo di saldatura sia conforme alle specifiche di produzione,
+alcuni categorie di difetti rilevabili sono:
+\begin{itemize}
+\item Pin sollevati/aperti;
+\item Cortocircuiti tra i pin dovuti a leghe saldanti in eccesso;
+\item Giunti di saldatura con eccesso o insufficienza di lega saldante;
+\item Saldatura fredda;
+\end{itemize}
+
+\subsection{Test del circuito stampato}
+Obiettivo di questo test è garantire che il circuito stampato sia integro prima dell’effettiva popolazione,
+alcune categorie di difetti rilevabili sono:
+\begin{itemize}
+\item Cortocircuiti tra le piste;
+\item Piste interrotte;
+\item Pad o altre caratteristiche della scheda mancanti;
+\item Violazione della larghezza delle piste imposta in fase progettuale;
+\item Violazione della distanza delle piste imposta in fase progettuale;
+\item Eccessiva presenza di rame;
+\end{itemize}
+
+\subsection{Riconoscimento di punti fiducial}
+L’ispezione ottica automatica ha principalmente finalità di controllo qualità ma può essere impiegata
+anche per il riconoscimento di punti fiduciari (Fiducials) sulla superfice del PCB all’interno di macchine non AOI ma che abbiano bisogno di elevata contattazione. Il riconoscimento dei punti fiduciari rappresenta
+per il sistema in oggetto un metodo per correlare la posizione della scheda all’interno dell’area di lavoro
+con le quote definite nel CAD.
+
 \section{Macchine SPEA}
 In questa sezione vorrei parlare delle macchine SPEA e di come adottino
 funzionalità di computer vision per realizzare funzioni di ispezione automatica
 oppure di calibrazione del sistema.
 \subsection{Flying probes}
+Un flying probe è un sistema per il test automatic delle schede elettroniche (pre e post popolamento) che 
+usa un sistema di misura simile ad un tester in-circuit, a differenza di un tester tradizionale, che utilizza fixtures a letto d’aghi, utilizza un numero di sonde sia fisse che mobilo per la contattazione. 
+A seconda del modello un tester di questa tipologia può essere equipaggiato con un numero variabile tra 
+1 e 20 probes (di solito 4) in grado di contattare la scheda sotto test sia dal lato superiore che da quello inferiore in modo da scansire ogni nodo del circuito in successione, questa tipologia di sistemi risulta in grado di raggiungere prestazioni di contattazione (precisione nel posizionamento) nell’ordine dei  100 μm e frequenze di contattazione nell’ordine di 40 contattazioni al secondo a seconda della distanza di movimento delle sonde. 
+
+Considerando che non è necessario un adattatore specifico per la contattazione ( sono assenti i costi di 
+fixturing e l’attesa per la realizzazione dell’adattatore) sono adatti al testing di prototipi, piccoli lotti di produzioni o per un utilizzo come strumento di misura evoluto da parte di un tecnico esperto.  
+
+\subsubsection{Tipi di test}
+
+I tester flying probe di solito effettuano misure di tipo analogico su grandezze quali resistenza, capacità e induttanza mentre la scheda sottoposta a test risulta spenta, ciò permette di verificare il corretto 
+montaggio e funzionamento di quasi tutte le tipologie di componenti discreti.  
+La tipologia di sistemi in oggetto è spesso estesa per includere altre metodologie di test quali boundary 
+scan, AOI, test funzionale e ispezione termica per aumentare il più possibile la copertura del testing e 
+quindi la qualità del prodotto finale. 
+
+\subsubsection{Caratteristiche per campo di applicazione}
+Tester di questo tipo sono disponibili per l’applicazione al test delle schede elettroniche prima che 
+vengano popolate, al test delle schede assemblate e per testare e riparare prodotti di ritorno dal campo. 
+
+\subsubsection{PCB non popolate}
+I sistemi applicati all’ispezione di questa tipologia di pcb sono in grado di svolgere test di continuità e 
+isolamento, sistemi dedicati a questa tipologia di test sono in grado di lavorare applicando tensioni 
+
+\subsubsection{PCB popolate}
+I sistemi applicati all’ispezione di questa tipologia di pcb sono meno orientate al parallelismo ma
+includono una gamma di opzioni più vasta (di cui l’AOI fa parte) in modo da massimizzare la copertura dei
+possibili fault.
+
+\subsubsection{Riparazione}
+Questi sistemi operano solitamente con un numero minimo di probe, l’analisi delle impedenze viene
+utilizzata confrontando i risultati della scheda sotto test con quella di un prodotto privo di difetti. Il
+throughput non è significativo, la facilità d’uso e il prezzo contenuto sono fattori chiave.
+
 \subsection{Pick and Place handlers}
-\subsection{Handler Input Output Units}
+
+Il test finale è uno dei maggiori processi nella fabricazione dei semiconduttori, risulta necessario testare  i circuiti integrati prodotti prima della consegna al cliente per evitare di propagare fault dei dispositivi prodotti sui prodotti del cliente. 
+I flussi di test sono altamente automatizzati ed una fetta importante del mercato dei sistemi di test per 
+questa categoria di prodotti è rappresentata da sistemi robotici, i pick and place handler, in grado di 
+garantire un elevato throughput. 
+I p\& p handler agiscono come meccanismo di trasporto verso le stazioni di test dove il test elettrico viene 
+effettuato per poi smistare (binning) i componenti a seconda del risultato del test, motivazione per 
+l’utilizzo di sistemi automatici di questo tipo è principalmente la dimensione dei dispositiv i da testare (fino a 2x2 millimetri) che renderebbe difficoltosa la contattazione affidabile se non tramite meccanismi di 
+posizionamento ad elevata precisione e la necessità di effettuare il test anche a differenti condizioni di temperatura ( spesso parti per il mercato automotive o militare necessitano di rigidi protocolli di test in 
+condizioni avverse). In un contesto di produzione industriale un handler può arrivare a testare fino a 
+25000 parti per ora. 
+
+\subsubsection{Composizione di un pick and place handler }
+
+\subsubsection{Dispositivo Di Input }
+L’input delle parti da testare può avvenire per mezzo dei meccanismi di caricamento più disparati, i più 
+diffusi sono il caricamento per mezzo di vassoi aderenti a standard JEDEC, il caricamento in bobine ed il 
+caricamento tramite unità a boccia (bowl feeder) in grado di accettare parti non organizzate in maniera 
+specifica e di procedere al sorting su vassoio automatico.  
+
+\subsubsection{Spea Bfu} 
+
+La bowl feeder unit è un dispositivo di input basato su una scodella (bowl) vibrante in grado di caricare i 
+componenti sciolti su dei vassoi che successivamente saranno processati dall’unità di handling, l’unità BFU 
+è dotata di sistemi di visione necessari a decidere quali movimenti subirà il componente prima di essere 
+posato sul vassoio di uscita, due telecamere sono in grado di rilevare su due stazioni diverse del sistema 
+di input se il componente è ruotato oppure capovolto e quindi di correggerne l’orientamento inviando 
+opportuni segnali di controllo alla stazione contenente l’attuatore.  
+
+\subsubsection{Pick And Place}
+
+L’handling delle parti da testare viene effettuato per mezzo di un manipolatore cartesiano che una volta 
+prelevate le parti sotto test dal dispositivo di input procede alla movimentazione lungo il piano orizontale verso le stazioni di test, l’apparato in oggetto è dotato di sonde con pickup di tipo pneumatico in grado di prelevare i componenti senza danneggiarli per mezzo del vuoto, tali sonde sono dotate di 
+movimentazione anche lungo l’asse Z.  
+
+\subsubsection{Test Station} 
+
+La test station si occupa di effettuare il test del dispositivo e comunicare al test handler il risultato, essa può essere indipendente dall’handler o strettamente integrata, differenti tipologie di stazioni sono 
+disponibili, da notare l’esistenza di stazioni di test elettromeccaniche orientate al collaudo dei mems in 
+grado di sottoporli a stimoli meccanici e misure analogiche altamente accurate.  
+
+\subsubsection{Dispositivo Di Output} 
+
+Come per il caricamento l’output può avvenire su una vasta gamma di supporti di uscita, vassoio, bobina, 
+tubo. 
+
+\subsection{Spea RSU} 
+
+La reel sort unit è un dispositivo di output in grado di organizzare i componenti in uscita all’interno di 
+bobine destinate alla vendita, questa unità è equipaggiata con un sistema di visione in grado di 
+riconoscere componenti mal posizionati all’interno della bobina prima di sigillarla, per  tanto effettua un 
+test di tasca vuota ed uno di componente ben posizionato. 
+
 
 \endinput

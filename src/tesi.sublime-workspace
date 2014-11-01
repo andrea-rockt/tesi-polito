@@ -35,7 +35,7 @@
 			"file": "chapters/computer-vision.tex",
 			"settings":
 			{
-				"buffer_size": 11184,
+				"buffer_size": 13337,
 				"line_ending": "Unix"
 			}
 		},
@@ -165,7 +165,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -258,15 +258,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11184,
+						"buffer_size": 13337,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7539,
-								7539
+								10506,
+								10506
 							]
 						],
 						"settings":
@@ -274,10 +274,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1723.0,
+						"translation.y": 3043.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -293,8 +293,8 @@
 						"selection":
 						[
 							[
-								10319,
-								10319
+								11308,
+								11308
 							]
 						],
 						"settings":
@@ -302,10 +302,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2732.0,
+						"translation.y": 2800.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{

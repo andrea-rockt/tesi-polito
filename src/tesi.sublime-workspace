@@ -11,15 +11,7 @@
 			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 349,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/introduzione.tex",
-			"settings":
-			{
-				"buffer_size": 3391,
+				"buffer_size": 348,
 				"line_ending": "Unix"
 			}
 		},
@@ -27,26 +19,39 @@
 			"file": "preamble.tex",
 			"settings":
 			{
-				"buffer_size": 914,
+				"buffer_size": 937,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/computer-vision.tex",
+			"file": "chapters/machine-vision.tex",
 			"settings":
 			{
-				"buffer_size": 13337,
+				"buffer_size": 13097,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\\chapter{Automatic Optical Inspection}\n\n\\section{Ispezione dei dispositivi elettronici}\nNuovi sviluppi nell’assemblaggio di PCB non possono avvenire se non con cambiamenti corrispondenti\nnella tecnologia di controllo della qualità.\nIl test in-circuit è stato per anni il mezzo principale per la rilevazione e la diagnosi dei difetti poichè\nrimuovendo la barriera del “design for testability” (La realizzazione di un progetto introducendo parti e\ncomponenti accessorie volte a facilitare o a permettere test altrimenti impossibili) ha reso possibile\nrealizzare sistemi complessi senza la paura di non poterli testare. Il test in circuit è stato per tanto un\napproccio semplice ed universale al problema del controllo qualità nell’industria elettronica ma risulta\nessere sempre più difficile applicarlo a causa della miniaturizzazione che rende spesso impraticabile il test\ntradizionale per mezzo di sistemi a sonde mobili o a letto d’aghi.\nConsiderando altre tecnologie quale il boundary scan, l’ispezione a raggi x, l’ispezione ottica manuale e\nl’ispezione ottica automatica nessuna è in grado di sostituire totalmente il test in-circuit ma è in grado di\ncomplementarlo efficientemente.\nTutti i processi usano l’ispezione ottica manuale. Gli ispettori in uno stabilimento di assemblaggio ben\ngestito spesso sprecano la maggior parte del loro tempo ispezionando prodotti non difettosi e usano solo\nuna frazione del loro tempo in maniera proficua al miglioramento ed al controllo della qualità (ovvero\nquando un difetto si presenta loro) esiste un modo tramite cui possiamo focalizzare la potenza dell’occhio\numano solo sui difetti?\nSe un sistema AOI è utilizzato per coadiuvare l’ispezione manuale il numero di ispettori decresce (la\nsemplicità del processo cresce) e la consistenza dell’ispezione migliora. Consideriamo una scheda dove\n5000 saldature di cui solo 10 sono inadeguate, se una macchina AOI la ispezionasse prima dell’uomo ed\napprovasse tutte le saldature corrette rimarrebbe solo da verificare manualmente le 10 saldature riportate\ncome critiche dal sistema automatico, date le ambiguità delle performance umane (dovute a stanchezza e\ndifferenze tra individui diversi) adottare questa metodologia porterebbe ad una maggiore efficienza nel controllo qualità\n\nUn sistema AOI non aggiunge nessuna nuovo concetto allo stabilimento, si limita a automatizzare una\ncategoria di ispezioni già realizzata manualmente.\n\n\\subsection {Principio di funzionamento di un sistema AOI}\n\nUn sitema AOI è in grado di acquisire milioni di pixel in una frazione di secondo, questi dati vengono\nutilizzati per l’ispezione visuale e per misure di precisione.\nIl sistema AOI scansisce visualmente la superfice della scheda elettronica, la scheda è illuminata da\ndifferenti sorgenti luminose ed osservata da uno scanner o da un numero arbitrario di telecamere ad alta\ndefinizione, ogni produttore di sistemi AOI sviluppa degli algoritmi properietari di ispezione e di tecniche\ndi illuminazione, ciò si traduce in differenti punti di forza o debolezza a seconda della tipologia di\nprodotto ispezionato e delle tecniche impiegate.\nIlluminare correttamente la parte è una fase critica per un sistema AOI, esso deve essere in grado di\nvedere la parte da ispezionare ma soprattutto le caratteristiche distintive del difetto da individuare, la luce amplifica i dettagli salienti e sopprime dettagli categorizzabili come rumore, ad esempio molti prodotti\nriflettono la luce causando aree di intensa illuminazione nell’immagini, ciò potrebbe oscurare i dettagli\nricercati durante l’ispezione.\nIl dispositivo di imaging traduce la luce riflessa dalla parte da ispezionare in un immagine elettronica che\nverrà successivamente elaborata.\nIl cervello di un sistema AOI è il “vision computer”, tale computer analizza l’immagine per estrarre misure,\nconteggi di parti, colori o altre features visuali necessari all’ispezione.\n\n\\section {Tipologie di ispezione ottica automatica delle schede elettroniche}\n\n\\subsection{Presenza di un componente}\nObiettivo di questo test è verificare la presenza di un componente sulla scheda, ciò assolve al doppio\ncompito di verifica del componente corretto e controllo dell’assenza di un componente non corretto, i\npossibili scenari mitigati sono:\n\\begin{itemize}\n\\item Durante un passaggio della catena produttiva costituito da una saldatura manuale l’addetto ha\ndimenticato il componente oppure ne ha saldato uno sbagliato;\n\\item Durante un passaggio della catena produttiva costituito da una posa automatica del componente\ne successiva saldatura automatica il sistema pick and place non ha posizionato correttamente il\ncomponente o il processo di saldatura automatica non è stato affidabile provocandone il distacco.\nUn test di presenza ottica può completare la copertura dei possibili difetti rimediando a limitazioni del\ntest in-circuit come l’assenza di un capacità di filtro in parallelo ad altre;\n\\end{itemize}\n\n\\subsection{Posizionamento di un componente}\nObiettivo di questo test è verificare che il montaggio di un componente sia avvenuto correttamente e che\nrispetti determinate specifiche meccaniche quali:\n\\begin{itemize}\n\\item Skew (rotazione del componente lungo l’asse perpendicolare alla scheda);\n\\item Offset (traslazione del componente rispetto al baricentro atteso);\n\\end{itemize}\n\nO che non si siano verificate delle condizioni di posizionamento anomalo:\n\\begin{itemize}\n\\item Componente saldato capovolto.;\n\\item Componente saldato verticalemente sulla scheda. (Billboarding);\n\\item Componente parzialmente rialzato lungo un lato (Tombstoning);\n\\item Componente saldato con polarità errata;\n\\end{itemize}\n\n\\subsection{Identificazione di un componente}\nObiettivo di questo test è garantire la tracciabilità delle parti montate su di una scheda o delle schede\ntestate tramite l’inserimento di un codice nel database del sistema CIM se presente\n\\begin{itemize}\n\\item Verifica ottica dei caratteri\n\\item Optical Character Recognition\n\\item Lettura di codici a barre\n\\end{itemize}\n\n\\subsection{Test della saldatura}\nObiettivo di questo test è garantire che il processo di saldatura sia conforme alle specifiche di produzione,\nalcuni categorie di difetti rilevabili sono:\n\\begin{itemize}\n\\item Pin sollevati/aperti;\n\\item Cortocircuiti tra i pin dovuti a leghe saldanti in eccesso;\n\\item Giunti di saldatura con eccesso o insufficienza di lega saldante;\n\\item Saldatura fredda;\n\\end{itemize}\n\n\\subsection{Test del circuito stampato}\nObiettivo di questo test è garantire che il circuito stampato sia integro prima dell’effettiva popolazione,\nalcune categorie di difetti rilevabili sono:\n\\begin{itemize}\n\\item Cortocircuiti tra le piste;\n\\item Piste interrotte;\n\\item Pad o altre caratteristiche della scheda mancanti;\n\\item Violazione della larghezza delle piste imposta in fase progettuale;\n\\item Violazione della distanza delle piste imposta in fase progettuale;\n\\item Eccessiva presenza di rame;\n\\end{itemize}\n\n\\subsection{Riconoscimento di punti fiducial}\nL’ispezione ottica automatica ha principalmente finalità di controllo qualità ma può essere impiegata\nanche per il riconoscimento di punti fiduciari (Fiducials) sulla superfice del PCB all’interno di macchine non AOI ma che abbiano bisogno di elevata contattazione. Il riconoscimento dei punti fiduciari rappresenta\nper il sistema in oggetto un metodo per correlare la posizione della scheda all’interno dell’area di lavoro\ncon le quote definite nel CAD.\n\n\\section{Macchine SPEA}\nIn questa sezione vorrei parlare delle macchine SPEA e di come adottino\nfunzionalità di computer vision per realizzare funzioni di ispezione automatica\noppure di calibrazione del sistema.\n\\subsection{Flying probes}\nUn flying probe è un sistema per il test automatic delle schede elettroniche (pre e post popolamento) che \nusa un sistema di misura simile ad un tester in-circuit, a differenza di un tester tradizionale, che utilizza fixtures a letto d’aghi, utilizza un numero di sonde sia fisse che mobilo per la contattazione. \nA seconda del modello un tester di questa tipologia può essere equipaggiato con un numero variabile tra \n1 e 20 probes (di solito 4) in grado di contattare la scheda sotto test sia dal lato superiore che da quello inferiore in modo da scansire ogni nodo del circuito in successione, questa tipologia di sistemi risulta in grado di raggiungere prestazioni di contattazione (precisione nel posizionamento) nell’ordine dei  100 μm e frequenze di contattazione nell’ordine di 40 contattazioni al secondo a seconda della distanza di movimento delle sonde. \n\nConsiderando che non è necessario un adattatore specifico per la contattazione ( sono assenti i costi di \nfixturing e l’attesa per la realizzazione dell’adattatore) sono adatti al testing di prototipi, piccoli lotti di produzioni o per un utilizzo come strumento di misura evoluto da parte di un tecnico esperto.  \n\n\\subsubsection{Tipi di test}\n\nI tester flying probe di solito effettuano misure di tipo analogico su grandezze quali resistenza, capacità e induttanza mentre la scheda sottoposta a test risulta spenta, ciò permette di verificare il corretto \nmontaggio e funzionamento di quasi tutte le tipologie di componenti discreti.  \nLa tipologia di sistemi in oggetto è spesso estesa per includere altre metodologie di test quali boundary \nscan, AOI, test funzionale e ispezione termica per aumentare il più possibile la copertura del testing e \nquindi la qualità del prodotto finale. \n\n\\subsubsection{Caratteristiche per campo di applicazione}\nTester di questo tipo sono disponibili per l’applicazione al test delle schede elettroniche prima che \nvengano popolate, al test delle schede assemblate e per testare e riparare prodotti di ritorno dal campo. \n\n\\subsubsection{PCB non popolate}\nI sistemi applicati all’ispezione di questa tipologia di pcb sono in grado di svolgere test di continuità e \nisolamento, sistemi dedicati a questa tipologia di test sono in grado di lavorare applicando tensioni \n\n\\subsubsection{PCB popolate}\nI sistemi applicati all’ispezione di questa tipologia di pcb sono meno orientate al parallelismo ma\nincludono una gamma di opzioni più vasta (di cui l’AOI fa parte) in modo da massimizzare la copertura dei\npossibili fault.\n\n\\subsubsection{Riparazione}\nQuesti sistemi operano solitamente con un numero minimo di probe, l’analisi delle impedenze viene\nutilizzata confrontando i risultati della scheda sotto test con quella di un prodotto privo di difetti. Il\nthroughput non è significativo, la facilità d’uso e il prezzo contenuto sono fattori chiave.\n\n\\subsection{Pick and Place handlers}\n\nIl test finale è uno dei maggiori processi nella fabricazione dei semiconduttori, risulta necessario testare  i circuiti integrati prodotti prima della consegna al cliente per evitare di propagare fault dei dispositivi prodotti sui prodotti del cliente. \nI flussi di test sono altamente automatizzati ed una fetta importante del mercato dei sistemi di test per \nquesta categoria di prodotti è rappresentata da sistemi robotici, i pick and place handler, in grado di \ngarantire un elevato throughput. \nI p\\&p handler agiscono come meccanismo di trasporto verso le stazioni di test dove il test elettrico viene \neffettuato per poi smistare (binning) i componenti a seconda del risultato del test, motivazione per \nl’utilizzo di sistemi automatici di questo tipo è principalmente la dimensione dei dispositiv i da testare (fino a 2x2 millimetri) che renderebbe difficoltosa la contattazione affidabile se non tramite meccanismi di \nposizionamento ad elevata precisione e la necessità di effettuare il test anche a differenti condizioni di temperatura ( spesso parti per il mercato automotive o militare necessitano di rigidi protocolli di test in \ncondizioni avverse). In un contesto di produzione industriale un handler può arrivare a testare fino a \n25000 parti per ora. \n\n\\subsubsection{Composizione di un pick and place handler }\n\n\\subsubsection{Dispositivo Di Input }\nL’input delle parti da testare può avvenire per mezzo dei meccanismi di caricamento più disparati, i più \ndiffusi sono il caricamento per mezzo di vassoi aderenti a standard JEDEC, il caricamento in bobine ed il \ncaricamento tramite unità a boccia (bowl feeder) in grado di accettare parti non organizzate in maniera \nspecifica e di procedere al sorting su vassoio automatico.  \n\n\\subsubsection{Spea Bfu} \n\nLa bowl feeder unit è un dispositivo di input basato su una scodella (bowl) vibrante in grado di caricare i \ncomponenti sciolti su dei vassoi che successivamente saranno processati dall’unità di handling, l’unità BFU \nè dotata di sistemi di visione necessari a decidere quali movimenti subirà il componente prima di essere \nposato sul vassoio di uscita, due telecamere sono in grado di rilevare su due stazioni diverse del sistema \ndi input se il componente è ruotato oppure capovolto e quindi di correggerne l’orientamento inviando \nopportuni segnali di controllo alla stazione contenente l’attuatore.  \n\n\\subsubsection{Pick And Place}\n\nL’handling delle parti da testare viene effettuato per mezzo di un manipolatore cartesiano che una volta \nprelevate le parti sotto test dal dispositivo di input procede alla movimentazione lungo il piano orizontale verso le stazioni di test, l’apparato in oggetto è dotato di sonde con pickup di tipo pneumatico in grado di prelevare i componenti senza danneggiarli per mezzo del vuoto, tali sonde sono dotate di \nmovimentazione anche lungo l’asse Z.  \n\n\\subsubsection{Test Station} \n\nLa test station si occupa di effettuare il test del dispositivo e comunicare al test handler il risultato, essa può essere indipendente dall’handler o strettamente integrata, differenti tipologie di stazioni sono \ndisponibili, da notare l’esistenza di stazioni di test elettromeccaniche orientate al collaudo dei mems in \ngrado di sottoporli a stimoli meccanici e misure analogiche altamente accurate.  \n\n\\subsubsection{Dispositivo Di Output} \n\nCome per il caricamento l’output può avvenire su una vasta gamma di supporti di uscita, vassoio, bobina, \ntubo. \n\n\\subsection{Spea RSU} \n\nLa reel sort unit è un dispositivo di output in grado di organizzare i componenti in uscita all’interno di \nbobine destinate alla vendita, questa unità è equipaggiata con un sistema di visione in grado di \nriconoscere componenti mal posizionati all’interno della bobina prima di sigillarla, per  tanto effettua un \ntest di tasca vuota ed uno di componente ben posizionato. \n\n\n\\endinput",
 			"file": "chapters/automatic-optical-inspection.tex",
-			"file_size": 14621,
-			"file_write_time": 130588210025334938,
 			"settings":
 			{
-				"buffer_size": 14440,
+				"buffer_size": 14662,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/spea-vision-library.tex",
+			"settings":
+			{
+				"buffer_size": 789,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/introduzione.tex",
+			"settings":
+			{
+				"buffer_size": 2984,
 				"line_ending": "Unix"
 			}
 		},
@@ -62,7 +67,7 @@
 	"build_system": "Packages/Makefile/Make.sublime-build",
 	"command_palette":
 	{
-		"height": 54.0,
+		"height": 75.0,
 		"selected_items":
 		[
 			[
@@ -107,6 +112,8 @@
 	],
 	"file_history":
 	[
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/revision.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/introduzione.tex",
 		"/data/Andrea/Politecnico/Tesi/tesi-polito/src/tesi.sublime-project",
 		"/data/Andrea/Politecnico/Tesi/tesi-polito/src/main.tex",
 		"/data/Andrea/Politecnico/Tesi/tesi-polito/out/main.pdf",
@@ -174,15 +181,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 349,
+						"buffer_size": 348,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								136,
-								136
+								141,
+								141
 							]
 						],
 						"settings":
@@ -193,24 +200,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "chapters/introduzione.tex",
+					"file": "preamble.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3391,
+						"buffer_size": 937,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2828,
-								2828
+								187,
+								187
 							]
 						],
 						"settings":
@@ -218,7 +225,7 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 57.0,
+						"translation.y": 51.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -226,19 +233,75 @@
 				},
 				{
 					"buffer": 2,
-					"file": "preamble.tex",
+					"file": "chapters/machine-vision.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 914,
+						"buffer_size": 13097,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								176,
-								176
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "chapters/automatic-optical-inspection.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10725,
+								10725
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2907.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "chapters/spea-vision-library.tex",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -253,63 +316,35 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "chapters/computer-vision.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13337,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10506,
-								10506
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3043.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "chapters/automatic-optical-inspection.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14440,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11308,
-								11308
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2800.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
 					"buffer": 5,
+					"file": "chapters/introduzione.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2984,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2825,
+								2825
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 397.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "chapters/stato-dell-arte.tex",
 					"semi_transient": false,
 					"settings":

@@ -97,11 +97,15 @@ O che non si siano verificate delle condizioni di posizionamento anomalo:
 \subsection{Identificazione di un componente}
 Obiettivo di questo test è garantire la tracciabilità delle parti montate su di una scheda o delle schede
 testate tramite l’inserimento di un codice nel database del sistema CIM se presente
-\begin{itemize}
-\item Verifica ottica dei caratteri
-\item Optical Character Recognition
-\item Lettura di codici a barre
-\end{itemize}
+\begin{description}
+\item[Verifica ottica dei caratteri]
+La verifica ottica dei caratteri, o OCV, è uno strumento software di elaborazione elettronica delle immagini utilizzato per controllare la qualità di stampa o marcatura di una stringa di riconoscimento ottico dei caratteri (OCR) e confermarne la leggibilità. Oltre a verificare che il contenuto della stringa di testo presentata sia corretto, provvede anche a controllarne la qualità, il contrasto e la nitidezza, segnalando o rifiutando i campioni di scarsa qualità.
+Un’applicazione fondamentale che utilizza l’OCV è la verifica dei codici di data e lotto (stampati su un’etichetta o marcati direttamente sulla confezione o sul prodotto) nel confezionamento di prodotti farmaceutici, dispositivi sanitari, cosmetici e altri beni di consumo.
+Viene utilizzato un software OCR per leggere una stringa di testo e per provare a leggere anche un testo di scarsa qualità o rovinato, formulando l’ipotesi migliore sui dati. Sarà poi il software OCV a controllare la qualità e confermare la leggibilità del testo. Questo controllo viene attuato molto spesso per confermare che i codici di data e lotto stampati siano corrispondenti a quelli attesi.
+\item [Riconoscimento ottico dei caratteri] A differenza della verifica dei caratteri il riconoscimento non parte da una base conosciuta ma viene usato per riconoscere ed interpretare i caratteri impressi su di un dispositivo per poi inserirli in un database o intraprendere azioni differenti.
+\item [Lettura di codici a barre] Un codice a barre viene impresso sui dispositivi al fine di rappresentare un mezzo ottico affidabile e compatto per trasportare dei dati facilmente estraibili da sistemi automatici.
+
+\end{description}
 
 \subsection{Test della saldatura}
 
@@ -183,6 +187,82 @@ Questi sistemi operano solitamente con un numero minimo di probe, l’analisi de
 utilizzata confrontando i risultati della scheda sotto test con quella di un prodotto privo di difetti. Il
 throughput non è significativo, la facilità d’uso e il prezzo contenuto sono fattori chiave.
 
+\subsubsection{Ispezione ottica}
+I sistemi flying probe sono in grado di effettuare le seguenti ispezioni ottiche.
+
+\paragraph{Condensatore, resistenza ed induttanza SMT}
+I sistemi a sonde mobili SPEA prevedono l’ispezione automatica di condensatori, resistenze e induttori
+SMT, l’algoritmo sviluppato come task durante il progetto di laurea in alto apprendistato è qui riassunto :
+
+\vspace{5mm}
+
+\begin{tabularx}{\textwidth}{p{.3\linewidth} | p{.16\linewidth} |p{.45\linewidth}}
+Immagine & Passo & Descrizione \\
+\hline
+\vspace{.5mm}
+\includegraphics[width=0.3\textwidth]{img/smtcapacitor-sfocatura.png}& Sfocatura & L’immagine viene sfocata tramite un kernel gaussiano per eliminare le componenti di rumore presenti nell’immagine e rendere il successive step di flood fill capace di evadere dalle variazioni di colore introdotte dal rumore.\\
+\hline
+\vspace{.5mm}
+\includegraphics[width=0.3\textwidth]{img/smtcapacitor-ff.png}& Segmentazione del case (FloodFill) & Il case viene rilevato effettuando un flood fill a partire dal baricentro del component ( proveniente dai dati cad). 
+Se il risultato del flood fill è un area inferiore a quella attesa
+il processo viene ripetuto selezionando casualmente un
+punto seme in un intorno del baricentro .\\
+\hline
+\vspace{.5mm}
+\includegraphics[width=0.3\textwidth]{img/smtcapacitor-pinmask.png}& Pin mask & L’immagine del case è sottrata a quella originale, il risultato di questa operazione viene binarizzato con un metodo di sogliatura alla Otsu.\\
+\hline
+\vspace{.5mm}
+\includegraphics[width=0.3\textwidth]{img/smtcapacitor-pd.png}& Pins detection & L’immagine del case viene ridotta lungo l’asse minore
+mediando i valori dei pixel della stessa riga/colonna, l’immagine contenente le intensità risultanti viene sogliata filtrando quindi i picchi non dovuti al pin.\\
+\hline
+\vspace{.5mm}
+\includegraphics[width=0.3\textwidth]{img/smtcapacitor-measure.png}& Misura & Dalle transizioni nell’immagine output del passo precedente
+vengono determinate le larghezze dei pin, dalle transizioni
+più lontane viene determinate la larghezza del case,
+dall’area ottenuta allo step 2 invece viene determinata
+l’altezza del case.
+Il risultato del test (score) viene determininato tramite una
+metrica di similarità tra il case atteso e quello rilevato, una
+mappatura non lineare dei valori viene applicata per
+separare meglio score di case simili.
+\end{tabularx}
+
+\paragraph{Pattern matching}
+Il riconoscimento di pattern è una sottoarea dell'apprendimento automatico. Esso consiste nell'analisi e
+identificazione di pattern all'interno di dati grezzi al fine di identificarne la classificazione.
+Sui sistemi spea è possibile confrontare l’immagine rilevata dal gruppo ottico con una serie di immagini
+campione (acquisite tramite un processo di apprendimento che può essere automatico o supervisionato).
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{img/patternmatching.png}
+\caption{Flusso di un programma di ispezione ottica tramite pattern matching su flying probe SPEA}
+\label{fig:pattern matching}
+\end{figure}
+
+\paragraph{Altri utilizzi dell'equipaggiamento di visione}
+Un sistema a sonde mobili necessita di precisioni di contattazione bassissime, è per questo che non è
+sufficiente inserire un prodotto da testare avendo cura di posizionarlo correttamente.
+I sistemi a sonde mobili in ingresso del prodotto effettuano un ispezione ottica per ottenere la
+rototraslazione del prodotto rispetto al sistema di riferimento del sistema analizzando la presenza e
+soprattutto la posizione di due o più punti fiduciari ( Fiducials ).
+
+\begin{itemize}
+\item Il sistema viene acceso, la procedura di homing assicura che il manipolatore cartesiano (dotato di
+encoder relativi) trovi lo zero del sistema di riferimento macchina.
+\item Una scheda viene caricata in input
+\item La sonda dotata di telecamera si posiziona sul punto dove dovrebbe essere localizzato il fiducial.
+\item Tramite ispezione ottica automatica viene ricercato tramite template matching un template
+precedentemente acquisito e la sua posizione in coordinate immagine viene correlata a quella
+dell’asse per ottenere una posizione nel sistema di riferimento macchina
+\item Similmente al punto 4 viene ricercato un secondo fiducial sulla scheda da testare.
+\item Sono quindi disponibili informazioni sulla rototraslazione della scheda all’interno del sistema e di
+conseguenza i successivi spostamenti ( se effettuati nel sistema di coordinate della scheda )
+saranno automaticamente corretti. 
+\end{itemize}
+
+
 \subsection{Pick and Place handlers}
 \includegraphics[clip=true, trim= 50 260 50 320,page=21,width=0.9\textwidth]{materiale/tesina-carlucci.pdf}
 
@@ -238,5 +318,24 @@ bobine destinate alla vendita, questa unità è equipaggiata con un sistema di v
 riconoscere componenti mal posizionati all’interno della bobina prima di sigillarla, per  tanto effettua un 
 test di tasca vuota ed uno di componente ben posizionato. 
 
+
+\subsection{Tipi di ispezione ottica effettuati da pick and place handlers}
+\subsubsection{Calibrazione e built in self test}
+Un sistema appartenente alla categoria p\&p handler è in grado di effettuare dei task di calibrazione
+riconoscento tramite tecniche di ispezione ottica opportuni punti fiduciari impressi sullo chassis ciò per
+mette di evitare derive nel sistema di movimentazione o di verificare tramite riconoscimento di codice a
+barre i dispositivi opzionali di natura esclusivamente meccanica necessari a portare a termine la ricetta di
+test in uso
+\subsubsection{Tracciabilità}
+I pick and place handler realizzano spesso funzionalità di tracciabilità riconoscendo per mezzo di
+ispezione ottica l’appartenenza di un componente sotto test ad un determinato lotto permettendo la
+realizzazione di test cells in grado di effettuare il test di più lotti contemporaneamente e di smistare
+correttamente le parti, l’esito di questi controlli può esserere successivamente comunicato al software CIM
+dell’industria
+\subsubsection{Empty check su tester}
+Un componente da testare rimasto bloccato in un sito di test porterebbe ad un falso test poichè
+mantenendo la propria contattazione impedendo al nuovo dispositivo di essere contattato porterebbe a
+falsi esiti, risulta quindi necessario sviluppare dei test AOI in grado di rilevare la presenza di componenti
+bloccati e disabilitare i siti di test per poi informare un operatore.
 
 \endinput

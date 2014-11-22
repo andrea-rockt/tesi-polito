@@ -1,0 +1,93 @@
+\section{Requisiti}
+\label{sec:requisiti}
+
+\begin{quote}
+\small
+In ingegneria del software, l'analisi dei requisiti (talvolta detta semplicemente analisi) è un'attività preliminare allo sviluppo (o alla modifica) di un sistema software, il cui scopo è quello di definire le funzionalità che il nuovo prodotto (o il prodotto modificato) deve offrire, ovvero i requisiti che devono essere soddisfatti dal software sviluppato.
+\end{quote}
+
+Procediamo in questa sezione all'analisi dei requisiti per ogni macro area precedentemente individuata nel dominio applicativo.
+
+\subsection{Acquisizione}
+La gestione dei dispositivi di acquisizione rappresenta uno dei compiti più critici di un software di visione industriale poichè
+questo modulo deve accomodare quanto più possibile la sostituzione di un dispositivo con uno di capacità equivalenti, risulta quindi necessario esplorare i seguenti requisiti.
+
+\subsubsection{Semplice sostituzione dei dispositivi di acquisizione}
+La gestione dei dispositivi di acquisizione deve avvenire in maniera generica, telecamere di produttori diversi ma di medesima natura devono essere esposte e gestite dalla libreria di visione in maniera omogenee astraendo il programmatore da eventuali peculiarità di configurazione della telecamera.
+\subsubsection{Scoperta dinamica dei dispositivi di acquisizione}
+Spesso un sistema di visione industriale viene aggiornato per adeguarlo ad una nuova applicazione o lo stesso sistema può lavorare con un numero differente di siti di acquisizione immagine, è opportuno quindi prevedere un meccanismo di scoperta automatico dei dispositivi di acquisizione che possa interrogare le varie interfacce supportate per la presenza di dispositivi compatibili e che possa associare gli stessi alla funzione e/o alla posizione all'interno del sistema
+\subsubsection{Gestione generica dei parametri dei dispositivi}
+Spesso produttori diversi espongono funzionalità e/o parametri simili in maniera leggermente diversa per tanto la libreria di visione dovrà stabilire una semantica consistente di alcune parole chiave del settore, per esempio ``tempo di esposizione'' e adottarle in maniera consistente gestendo parametri simili in maniera omogenea.
+\subsubsection{Gestione del trasferimento dati}
+Ogni dispositivo trasferisce i dati secondo logiche diverse, spesso si devono prevedere delle trame di esecuzione indipendenti per ogni dispositivo che servono delle code di frames è per tanto opportuno che la libreria incapsuli automaticamente le logiche di acquisizione e che gestisca correttamente, in maniera veloce ed affidabile, le politiche id acquisizione necessarie.
+\subsubsection{Organizzazione in driver}
+Ogni categoria di dispositivo deve essere gestita da un sottosistema omogeneo, basato sullo stesso SKD di acquisizione, in grado di distinguere le peculiarità di modelli diversi pilotati tramite lo stesso driver e di uniformarne il comportamento al resto dei driver.
+\subsubsection{Gestione di segnali HW esterni}
+Spesso i dispositivi di acquisizione presentano la possibilità di essere triggerati da dispositivi esterni o di pilotare sistemi di illuminazione sincronizzata tramite delle linee hw, queste funzionalità devono essere gestite in maniera omogenea per dispositivi differenti.
+
+\subsection{Filtri}
+La gestione dei filtri di acquisizione permette di migliorare la catena di acquisizione riducendo il rumore o esaltando caratteristiche salienti, nascono quindi i seguenti requisiti
+
+\subsubsection{Gestione di catene di filtri}
+I filtri devono essere liberamente componibili in catene, un approccio più evoluto e organizzato sotto forma di grafo porta alla realizzazione di veri e propri sistemi generici e grafici di connessione di filtri, per tanto i filtri devono esporre un interfaccia generica e comune standardizzando la publicazione dei metadati riguardo i filtri
+
+\subsubsection{Filtraggio in place}
+Quando vengono gestite immagini contenenti un elevato numero di dati la memoria rappresenta un reale collo di bottiglia per tanto molti filtri possono essere progettati per lavorare non su una copia dell'immagine ma sullo stesso spazio di memoria in input, i filtri devono essere in grado di publicare la possibilità di operare in-place ed il client deve essere in grado di richiederne questa particolare modalità.
+
+\subsubsection{Passthrough}
+I filtri devono essere liberamente disabilitabili in una catena, in questo caso il filtro passa semplicemente il frame corrente a valle.
+
+\subsubsection{Formato di interscambio}
+Le catene di filtri devono essere serializabili e deserializabili su disco per poter essere caricate su qualunque sw realizzato tramite l'uso della libreria.
+
+\subsection{Test ottici}
+La gestione di test ottici standard prevede la definizione di interfacce comuni per differenti esigenze quali diagnosica, metodo di esecuzione, logging dei dati
+
+\subsubsection{Logging}
+Un test ottico deve fornire dei dati di diagnostica sull'esecuzione in modo da informare il programmatore su eventuali criticità riscontrate durante l'esecuzione dell'algoritmo o per fornire dati necessari ad interpretare i risultati, per tanto un interfaccia per il logging dei dati da esporre al client deve essere realizzata.
+
+\subsubsection{Diagnostica}
+Un test ottico deve fornire oltre che a un log testuali delle immagini di diagnostica che permettano di osservare i passi intermedi di un algoritmo, la generazione di tale output deve essere disabilitabile per non inficiare i tempi di esecuzione dei test.
+
+\subsubsection{Metodi}
+Un test ottico deve esporre la possibilità di essere interrogato sui metodi supportati in modo da offrire la possibilità di eseguire algoritmi diversi a seconda dell'esigenza o deve prevedere degli opportuni punti di estensione per l'inserimento di comportamenti definiti dall'utente.
+
+
+\subsection{Persistenza}
+La persistena dei dati su disco rappresenta un modulo importante per l'interscambio di informazioni tra software diversi, per tanto si rilevano i seguenti requisiti.
+
+\subsubsection{Gestione uniforme di formati immagine diversi}
+Formati immagini diversi quali,jpeg, png, bmp devono essere gestiti in modo trasparente dal modulo di persistenza, eventuali peculiarità dei formati dati devono essere gestite dalla libreria e non esposti al programmatore
+
+\subsubsection{Gestione metadati}
+Metadati quali timestamp, tempo di esposizione, dispositivo di acquisizione o eventuali risultati dei test devono essere salvati e caricati contestualmente ai dati immagine
+
+\subsubsection{Decorazione}
+I meccanismi di persistenza devono supportare la decorazione ovvero l'organizzazione concentrica delle fasi di scrittura/lettura tale da rendere possibile l'estenzione del comportamento del sistema di persistenza.
+
+\subsection{Conversione}
+Il modulo di conversione rappresenta il punto di convergenza dei dati immagine verso il formato preferenziale da sottoporre agli algoritmi di filtraggio e di test ottico per tanto si individuano i seguenti requisiti.
+
+\subsubsection{Conversione tra spazi di colore}
+Deve essere possibile convertire i dati di un immagine tra rappresentazioni basate su spazi di colore diversi, deve essere possibile interrogare il sistema di conversione per ottenere un componente in grado di effettuare la conversione specificata
+
+\subsubsection{Conversione fra differenti formati di pixel}
+Deve essere possibile gestire dati immagine con profondità di colore diverse o con un diverso layout in memoria in modo da gestire formati quali YUV422 che prevedono un sottocampionamento di alcune componenti o altre peculiarità.
+
+\subsection{Gui}
+L'interazione uomo macchina deve essere gestita esponendo delle componenti grafiche semplici ed intuitive per tanto si evidenziano i seguenti requisiti.
+
+\subsubsection{Display}
+\'{E} necessario realizzare un componente grafico in grado di gestire la visualizzazione del feed proveniente da una telecamera, tale componente deve essere genericamente in grado di ricevere da una sorgente che aderisce all'interfaccia attesa e deve prevedere la possibilità di disegnare forme oppure di annotare l'immagine visualizzata con altri tipi di informazione
+
+\subsubsection{Gamma}
+I componenti grafici atti a visualizzare l'immagine devono possedere la capacità di applicare una correzione gamma alle immagini prima dell'effettiva visualizzazione in modo da rendere meglio interpretabile l'immagine visualizzata nonostante il processamento debba avvenire su una rappresentazione lineare del segnale.
+
+\subsubsection{Interazione}
+Il componente di visualizzazione delle immagini deve offrire la possibilità di effettuare  selezione, zoom, pan e di navigare fra le viste precedentemente selezionate, questo dovrà avvenire con un implementazione su GPU per non appesantire i calcoli necessari alla pipeline di visione computerizzata
+
+\subsection{Generali}
+Oltre a requisiti generati dal dominio applicativo esistono anche requisiti generati dal mercato, la maggior parte delle librerie per l'astrazione di domini applicativi legati all'applicazione industriale operano come middleware dove tecnologie diverse possono essere integrate oppure sostituite nel momento in cui rappresentano un collo di bottiglia per tanto si individuano i seguenti requisiti.
+
+\subsubsection{Architettura basata su provider}
+L'architettura della libreria di visione sarà basata sul concetto di provider, uno strato procedurale che rappresenta l'interfaccia necessaria ad adattare l'attuazione delle procedure di una libreria di image processing particolare alla dinamica del funzionamento della libreria di visione, ciò permette quindi di sostituire o aggiungere primitive provenienti da toolkit di visione differenti quali opencv o cognex vision pro utilizzandole senza preoccuparsi del marshaling dei dati tra uno e l'altro.

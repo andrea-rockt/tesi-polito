@@ -1,0 +1,35 @@
+\section{Scelte progettuali}
+\label{sec:scelte-progettuali}
+
+Finita l'analisi dei requisiti è necessario cominciare a costruire uno stack di tecnologie solide su cui basare la realizzazione della libreria di visione, per tanto in questa sezione verranno illustrate le scelte effettuate.
+
+\subsection{Linguaggio di programmazione}
+
+Lo sviluppo in ambito industriale prevede bassi tempi di integrazione e di sviluppo del software ma contemporaneamente alte prestazioni in elaborazione, le due esigenze si ritrovano fortemente in disaccordo tra loro, è proprio per questo che nella realizzazione di questa libreria di visione si è considerato di utilizzare una programmazione di tipo poliglotta, ovvero basata su differenti linguaggi di programmazione.
+Il linguaggio di programmazione selezionato per la realizzazione dello strato client della libreria è il C\#, linguaggio gestito della famiglia dei linguaggi aventi come target il runtime .net, spesso guardato con sospetto per la realizzazione di sistemi ad alte performance funge ottimamente da collante per la gestione ad alto livello dei task di visione, esso è utilizzato per la realizzazione delle componenti grafiche e dell'infrastruttura orientata agli oggetti.
+Il linguaggio di programmazione selezionato per la realizzazione dello strato di processamento della libreria è il c++, grazie alla presenza delle estensioni microsoft c++/cli risulta semplice da integrare nell'infrastruttura gestita del runtime .net e la disponibilità di librerie di image processing realizzate in c++ o che forniscono dei bindings verso di esso rappresenta un vantaggio considerevole
+
+\subsection{Tecnologie utilizzate}
+
+Per lo sviluppo delle componenti della libreria di visione sono state utilizzate tecnologie tra loro molto diverse fra cui
+
+\subsubsection{WPF}
+Windows Presentation Foundation (o WPF), nome in codice Avalon, è una libreria di classi del Framework .NET proprietarie Microsoft (introdotta con la versione 3.0) per lo sviluppo dell'interfaccia grafica delle applicazioni in ambienti Windows.
+
+L'innovazione principale di WPF è la rimozione di ogni legame con il modello di sviluppo tradizionale di Windows, introdotto con la versione 1.0 del sistema operativo. Tutti i controlli sono stati riscritti (non si appoggiano più a quelli della libreria “user”) e lo stesso meccanismo basato su scambio di messaggi, cuore del modello di programmazione di Windows, è stato abbandonato.
+
+WPF è basato su un sistema di grafica vettoriale che si appoggia alle DirectX per sfruttare l'accelerazione hardware delle moderne schede grafiche. WPF può essere impiegato per realizzare applicativi eseguibili anche all'interno del browser Microsoft Internet Explorer o di altri browser avanzati, purché sia presente il Framework. Il linguaggio usato per la creazione di una interfaccia utente in WPF è lo XAML (eXtensible Application Markup Language), basato su XML.
+
+Tale toolkit grafico è stato selezionato per essere utilizzato nella realizzazione di questa libreria di visione poichè offre una gestione evoluta di tutte le problematiche di presentazione, infatti, esso offre punti di estensione per la scrittura di pixel shader da eseguire sulla scheda grafica, offre la possibilità di applicare trasformazioni geometriche arbitrarie ai controlli grafici permettendo quindi di gestire sistemi di coordinate arbitrarie (mondo, immagine) e tramite la definizione di template per i dati di presentare in maniera uniforme informazioni a corredo dell'ispezione ottica
+
+\subsubsection{Opencv}
+Il framework OpenCV nasce da una iniziativa dell’Intel, mentre lavorava
+su miglioramenti delle loro CPU per applicazioni intensive, ad esempio
+ray-tracing in tempo reale e proiezione 3D. Uno degli addetti della Intel,
+aveva notato come in molte universit\`{a}, tra cui il MIT Media Lab fosse stato realizzato un framework di visione, il cui codice era passato
+da studente a studente. A tal proposito si decise di iniziare, a partire da
+questo codice, un framework per la computer vision ottimizzato per i processori Intel. Il
+primo avvio di tale progetto, con la collaborazione di un team Intel russo,
+fu nel 1999. la prima release ufficiale di OpenCV risale, invece, al 2006.
+Opencv è stato selezionato per la disponibilità di un elevato numero di primitive di image processing, l'ottimizzazione degli algoritmi tramite librerie per il calcolo, la disponibiltà del supporto al gpu computing e la genericità e flessibilità del modello di programmazione dallo stile modern c++.
+

@@ -1,0 +1,43 @@
+\section{Dominio applicativo}
+\label{sec:dominio-applicativo}
+
+\begin{quote}
+\small
+In ingegneria del software e in altre discipline informatiche, l'espressione dominio applicativo (o dominio dell'applicazione; in alcuni casi dominio del problema) si riferisce al contesto in cui una applicazione software opera, soprattutto con riferimento alla natura e al significato delle informazioni che devono essere manipolate. Nei più diffusi modelli e metodi di sviluppo del software, l'analisi del dominio (ovvero l'analisi volta a comprendere il contesto operativo in cui l'applicazione dovrà inserirsi) è una componente essenziale (e in genere preliminare) e dell'analisi dei requisiti.
+\end{quote}
+Una libreria di visione artificiale orientata all'utilizzo industriale comprende moduli appartenenti a diversi ambiti tecnologici a cavallo tra hardware e software possiamo quindi procedere nello scomporre il dominio applicativo in differenti macro aree:
+
+\paragraph{Acquisizione:}
+Astrazione di dispositivi di acquisizione eterogenei.
+\paragraph{Filtri:}
+Filtri di miglioramento dell'immagine.
+\paragraph{Test ottici:}
+Algoritmi compositi per la realizzazione di task ricorrenti nell'ispezione ottica automatica
+\paragraph{Persistenza:}
+Gestione dei formati di memorizzazione di video/immagini
+\paragraph{Conversione:}
+Conversione tra spazi di colore, diversi formati di pixel.
+\paragraph{Gui:}
+Controlli per l'interazione uomo macchina e la visualizzazione dei risultati degli algoritmi di visione
+
+
+
+\subsection{Acquisizione}
+In un contesto industriale differenti dispositivi possono essere impiegati per acquisire immagini, per esempio telecamere matriciali, lineari
+o dispositivi di imaging 3D, di conseguenza anche diversi protocolli di comunicazione sono disponibili sul mercato, spesso i dispositivi
+espongono interfacce eterogenee, difficili da generalizzare in un unica logica di utilizzo oppure espongono funzionalità peculiari. Spesso i dispositivi di acquisizione sono accoppiati con un triggering fornito da dispositivi HW per tanto l'utilizzo di tali sensori richiede l'interazione con altri moduli.
+
+\subsection{Filtri}
+Il miglioramento dell'immagine iniziale porta ad un vantaggio nella successiva fase di elaborazione, spesso le immagini acquisite da sistemi industriali presentano rumore o effetti non voluti che possono essere attenuati da un accurato filtraggio oppure dall'utilizzo combinato di tecniche di acquisizione con filtri volti all'aumento del rapporto segnale rumore tramite acquisizioni successive (HDR, aumento della gamma dinamica). I filtri possono essere utilizzati anche per evidenziare determinate caratteristiche salienti nell'immagine al fine di semplificare un ispezione ottica umana.  
+
+\subsection{Test ottici}
+Alcune categorie di ispezione ottica possono essere generalizzate in degli approcci chiavi in mano basati su differenti idee di fondo, per esempio la localizzazione di un punto di calibrazione può avvenire per mezzo di approcci basati su ``pattern matching'' o il riconoscimento di oggetti colorati può avvenire per mezzo di misure valutate in opportuni spazi di colore, per tanto una libreria di visione industriale  conterrà quanti più algoritmi di semplice utilizzo e relativa potenza.
+
+\subsection{Persistenza}
+La persistenza dei dati su disco è un altro aspetto importante della visione industriale, spesso i dati registrati dai sistemi di ispezione ottica devono essere integrati in databases per il computer integrated manifacturing (CIM) e per tanto diversi formati di input output vanno gestiti spesso esulando dai dati immagine. Sono proprio i metadati a documetare e oggettivare un ispezione ottica ripetibile per tanto spesso le immagini vengono corredate dei parametri utilizzati per l'acquisizione o di esiti delle varie fasi del test.
+
+\subsection{Conversione}
+Differenti dispositivi producono dati in formati differenti o  in spazi di colore alternativi al comune spazio RGB, per tanto è necessario un modulo in grado di tradurre le rappresentazioni in ingresso in una rappresentazione omogenea per i processi che avverranno a valle della conversione, oltre che differenti spazi di colore anche differenti codifiche dei dati dovranno essere gestite quali codifiche sottocampionate su alcuni canali o con differente layout in memoria.
+
+\subsection{Gui}
+L'interazione uomo macchina è fondamentale nell'applicazione all'industria, i risultati presentati dai sistemi di ispezione devono essere chiari e soprattutto devono catturare l'andamento statistico e le eventuali derive dei processi produttivi, per tanto componenti di visualizzazione sia di immagini che di dati statistici sono necessari alla realizzazione di sistemi efficienti.

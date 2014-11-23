@@ -4,11 +4,24 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}\usepackage{lmodern}
-
+\usepackage{listings}
 \usepackage{amsmath}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{tabularx}
 \newcommand{\degree}{\ensuremath{^\circ}}
 
+\lstset{language=[Sharp]C,
+showspaces=false,
+showtabs=false,
+breaklines=true,
+showstringspaces=false,
+breakatwhitespace=true,
+escapeinside={(*@}{@*)},
+commentstyle=\color{ForestGreen},
+keywordstyle=\color{NavyBlue},
+stringstyle=\color{Orange},
+basicstyle=\small\ttfamily
+}
 
 
 \ateneo{Politecnico di Torino}
@@ -33,3 +46,4 @@ dispositivi elettronici}
 \logosede{img/logo_blu.pdf}
 \figurespagetrue 
 \setlength{\parindent}{0pt}
+

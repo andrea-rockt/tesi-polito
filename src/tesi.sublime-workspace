@@ -8,39 +8,7 @@
 	"buffers":
 	[
 		{
-			"file": "chapters/10-machine-vision/fondamenti-di-ottica.tex",
-			"settings":
-			{
-				"buffer_size": 26963,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/machine-vision.tex",
-			"settings":
-			{
-				"buffer_size": 1511,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/10-machine-vision/image-processing.tex",
-			"settings":
-			{
-				"buffer_size": 27444,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/introduzione.tex",
-			"settings":
-			{
-				"buffer_size": 4717,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/10-machine-vision/illuminazione.tex",
+			"file": "chapters/05-sistemi-di-imaging/illuminazione.tex",
 			"settings":
 			{
 				"buffer_size": 8347,
@@ -48,67 +16,61 @@
 			}
 		},
 		{
-			"file": "chapters/sistemi-di-imaging.tex",
-			"settings":
-			{
-				"buffer_size": 188,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/05-sistemi-di-imaging/sensori.tex",
-			"settings":
-			{
-				"buffer_size": 15286,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "chapters/automatic-optical-inspection.tex",
 			"settings":
 			{
-				"buffer_size": 16727,
+				"buffer_size": 22688,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/conclusioni.tex",
+			"file": "chapters/spea-vision-library.tex",
 			"settings":
 			{
-				"buffer_size": 2788,
+				"buffer_size": 1168,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/05-sistemi-di-imaging/dispositivi-di-imaging.tex",
+			"file": "chapters/20-spea-vision-library/dominio-applicativo.tex",
 			"settings":
 			{
-				"buffer_size": 11408,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "main.tex",
-			"settings":
-			{
-				"buffer_size": 351,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/05-sistemi-di-imaging/lenti.tex",
-			"settings":
-			{
-				"buffer_size": 3402,
+				"buffer_size": 4699,
 				"line_ending": "Unix",
-				"name": "lenti"
+				"name": "panoramica.tex"
+			}
+		},
+		{
+			"file": "chapters/20-spea-vision-library/requisiti.tex",
+			"settings":
+			{
+				"buffer_size": 9768,
+				"line_ending": "Unix",
+				"name": "requisiti.tex"
+			}
+		},
+		{
+			"file": "chapters/20-spea-vision-library/scelte-progettuali.tex",
+			"settings":
+			{
+				"buffer_size": 4506,
+				"line_ending": "Unix",
+				"name": "scelte-progettuali.tex"
+			}
+		},
+		{
+			"file": "chapters/sommario.tex",
+			"settings":
+			{
+				"buffer_size": 150,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "preamble.tex",
 			"settings":
 			{
-				"buffer_size": 1008,
+				"buffer_size": 1027,
 				"line_ending": "Unix"
 			}
 		}
@@ -121,6 +83,10 @@
 		[
 			[
 				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"lowe",
 				"Convert Case: Lower Case"
 			],
 			[
@@ -182,21 +148,28 @@
 	"expanded_folders":
 	[
 		"/home/andreaf/Documenti/tesi/tesi-polito/src",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters"
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/20-spea-vision-library"
 	],
 	"file_history":
 	[
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/preamble.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/luce.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/main.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/tesi.sublime-project",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/machine-vision.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/automatic-optical-inspection.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/stato-dell-arte.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/fondamenti-di-ottica.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/dispositivi-di-imaging.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/machine-vision.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/image-processing.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/introduzione.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/illuminazione.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/sistemi-di-imaging.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/sensori.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/automatic-optical-inspection.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/conclusioni.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/dispositivi-di-imaging.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/main.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/lenti.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/preamble.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/luce.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/tesi.sublime-project",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/stato-dell-arte.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/dispositivi-di-imaging.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/machine-learning.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/valutazione-prestazioni.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/00-luce.tex",
@@ -267,124 +240,12 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "chapters/10-machine-vision/fondamenti-di-ottica.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 26963,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1057,
-								1057
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "chapters/machine-vision.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1511,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1511,
-								1511
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "chapters/10-machine-vision/image-processing.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27444,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27443,
-								27443
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 6271.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "chapters/introduzione.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4717,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4679,
-								4679
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 780.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "chapters/10-machine-vision/illuminazione.tex",
+					"file": "chapters/05-sistemi-di-imaging/illuminazione.tex",
 					"semi_transient": false,
 					"settings":
 					{
@@ -395,37 +256,64 @@
 						"selection":
 						[
 							[
-								1484,
-								1484
+								4389,
+								4389
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 1251.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "chapters/sistemi-di-imaging.tex",
+					"buffer": 1,
+					"file": "chapters/automatic-optical-inspection.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 188,
+						"buffer_size": 22688,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								182,
-								182
+								22068,
+								22068
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4347.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chapters/spea-vision-library.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								775,
+								775
 							]
 						],
 						"settings":
@@ -440,190 +328,107 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "chapters/05-sistemi-di-imaging/sensori.tex",
+					"buffer": 3,
+					"file": "chapters/20-spea-vision-library/dominio-applicativo.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15286,
+						"buffer_size": 4699,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7217,
-								7217
+								4699,
+								4699
 							]
 						],
 						"settings":
 						{
+							"auto_name": "panoramica.tex",
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1593.0,
+						"translation.y": 546.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "chapters/automatic-optical-inspection.tex",
+					"buffer": 4,
+					"file": "chapters/20-spea-vision-library/requisiti.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16727,
+						"buffer_size": 9768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7900,
-								7900
+								9767,
+								9767
 							]
 						],
 						"settings":
 						{
+							"auto_name": "requisiti.tex",
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1071.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "chapters/conclusioni.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2788,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1856,
-								1856
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "chapters/05-sistemi-di-imaging/dispositivi-di-imaging.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11408,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22,
-								22
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "main.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								186,
-								186
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "chapters/05-sistemi-di-imaging/lenti.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3355,
-								3355
-							]
-						],
-						"settings":
-						{
-							"auto_name": "lenti",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"word_wrap": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 780.0,
+						"translation.y": 1266.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "preamble.tex",
+					"buffer": 5,
+					"file": "chapters/20-spea-vision-library/scelte-progettuali.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1008,
+						"buffer_size": 4506,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1008,
-								1008
+								4506,
+								4506
+							]
+						],
+						"settings":
+						{
+							"auto_name": "scelte-progettuali.tex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 291.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "chapters/sommario.tex",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -635,6 +440,34 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "preamble.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								96,
+								96
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]

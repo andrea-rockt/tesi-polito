@@ -85,7 +85,7 @@ tridimensionali.
 
 \subsection{Tipi di operazioni sulle immagini}
 I tipi di operazioni che possono essere applicati all'immagine digitale $a[n,m]$
-per trasformarla nell'immagine $b[n,m]$ possono essere classificate in 3 categorie
+per trasformarla nell'immagine $b[n,m]$ possono essere classificate in 3 categorie \cite{Parker:2010:AIP:1965423}
 
 \begin{description}
 \item[Puntuali:] 	L'uscita di un operazione a delle determinate coordinate dipende solo dal valore di input a quelle coordinate.
@@ -191,11 +191,11 @@ bimodale).
 
 \subsection{Binarizzazione} In molti casi gli le scene di interesse conducono
 ad immagini che possono essere  considerate binarie, cioè contenenti nel caso
-ideale solo due livelli di grigio (bianco, nero) ad esempio : testo stampato,
+ideale solo due livelli di grigio (bianco, nero) ad esempio: testo stampato,
 manoscritto, parti meccaniche piatte, sagome, in altri casi, le immagini in
 analisi sono  intrinsecamente a più livelli di grigio, ma  l’unico contenuto
 rilevante è dato dalla forma  degli oggetti, delle regioni o delle linee.
-Anche in queste circostanze il modello ideale  è un’immagine a due livelli.
+Anche in queste circostanze il modello ideale  è un’immagine a due livelli \cite{doi:10.1117/1.1631315}.
 Dopo l’acquisizione di una scena da parte di un dispositivo di imaging,
 l’immagine che si ottiene è comunque  formata da numerosi livelli di grigio
 (tipicamente 256).Le ragioni sono principalmente riconducibili  a
@@ -371,7 +371,7 @@ Il laplaciano può essere assunto come segnale correttivo da combinare con il se
 \end{figure}
 
 \subsection{Canny edge detector}
-Nell'elaborazione di immagini, l'algoritmo di Canny è un operatore per il riconoscimento dei contorni (edge detection) ideato nel 1986 da John F. Canny. Utilizza un metodo di calcolo multi-stadio per individuare contorni di molti dei tipi normalmente presenti nelle immagini reali. Canny ha anche prodotto una teoria del riconoscimento dei contorni che si propone di spiegare i fondamenti di questa tecnica.
+Nell'elaborazione di immagini, l'algoritmo di Canny\cite{Canny:1986:CAE:11274.11275} è un operatore per il riconoscimento dei contorni (edge detection) ideato nel 1986 da John F. Canny. Utilizza un metodo di calcolo multi-stadio per individuare contorni di molti dei tipi normalmente presenti nelle immagini reali. Canny ha anche prodotto una teoria del riconoscimento dei contorni che si propone di spiegare i fondamenti di questa tecnica.
 
 Per il riconoscimento dei contorni l'algoritmo di Canny usa un filtro basato sulla derivata prima di una gaussiana, e quindi i risultati prodotti sono disturbati dal rumore presente nei dati di un'immagine ``grezza'' (raw image). Per questo motivo, prima di iniziare l'elaborazione, l'immagine raw viene sottoposta a convoluzione con un filtro gaussiano. Il risultato è un'immagine con una leggera ``sfocatura'' gaussiana, in cui nessun singolo pixel è affetto da disturbi di livello significativo.
 

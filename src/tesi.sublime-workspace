@@ -8,61 +8,36 @@
 	"buffers":
 	[
 		{
-			"file": "chapters/05-sistemi-di-imaging/illuminazione.tex",
+			"contents": "Searching 33 files for \".pdf\" (case sensitive)\n\n/home/andreaf/Documenti/tesi/tesi-polito/src/Makefile:\n    8  \n    9  postbuild:\n   10: 	mv $(TMPDIR)/*.pdf $(OUTDIR)\n   11  \n\n/home/andreaf/Documenti/tesi/tesi-polito/src/Makefile.include:\n    1  ###\n    2: ### generic GNU make Makefile for .tex -> .pdf.\n    3  ### ransford at cs.umass.edu\n    4  ###   http://github.com/ransford/pdflatex-makefile\n    .\n   30  endif\n   31  \n   32: ## Name of the target file, minus .pdf: e.g., TARGET=mypaper causes this\n   33: ## Makefile to turn mypaper.tex into mypaper.pdf.\n   34  TARGET ?= report\n   35: PDFTARGETS += $(TARGET).pdf\n   36  \n   37  ## If $(TARGET).tex refers to .bib files like \\bibliography{foo,bar}, then\n   ..\n  110  endif\n  111  \n  112: $(PDFTARGETS): %.pdf: %.tex $(BIBDEPS) $(INCLUDEDTEX) $(REVDEPS) \n  113  	\n  114  	$(PDFLATEX) $*\n  ...\n  121  \n  122  # remove .aux and .log files created by files in $(INCLUDEDTEX)\n  123: AUXFILES = $(foreach T,$(PDFTARGETS:.pdf=), $(T).aux)\n  124  AUXFILES += $(patsubst %.tex,%.aux, $(INCLUDEDTEX))\n  125  LOGFILES = $(patsubst %.aux,%.log, $(AUXFILES))\n  126  \n  127  clean:\n  128: 	$(RM) $(foreach T,$(PDFTARGETS:.pdf=), \\\n  129: 		$(T).out $(T).pdf $(T).blg $(T).bbl \\\n  130  		$(T).lof $(T).lot $(T).toc $(T).idx \\\n  131  		$(T).nav $(T).snm $(T).synctex.gz) \\\n\n/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/automatic-optical-inspection.tex:\n  159  \\subsection{Flying probes}\n  160  \n  161: %\\includegraphics[clip=true, trim= 50 540 50 120,page=18,width=0.9\\textwidth]{materiale/tesina-carlucci.pdf}\n  162  		\n  163  \n  ...\n  274  \n  275  \\subsection{Pick and Place handlers}\n  276: %\\includegraphics[clip=true, trim= 50 260 50 320,page=21,width=0.9\\textwidth]{materiale/tesina-carlucci.pdf}\n  277  \n  278  Il test finale è uno dei maggiori processi nella fabricazione dei semiconduttori, risulta necessario testare  i circuiti integrati prodotti prima della consegna al cliente per evitare di propagare fault dei dispositivi prodotti sui prodotti del cliente. \n\n11 matches across 3 files\n",
 			"settings":
 			{
-				"buffer_size": 8347,
+				"buffer_size": 2050,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 229,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/automatic-optical-inspection.tex",
+			"file": "Makefile.include",
 			"settings":
 			{
-				"buffer_size": 22688,
+				"buffer_size": 4192,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/spea-vision-library.tex",
+			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 1168,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/20-spea-vision-library/dominio-applicativo.tex",
-			"settings":
-			{
-				"buffer_size": 4699,
-				"line_ending": "Unix",
-				"name": "panoramica.tex"
-			}
-		},
-		{
-			"file": "chapters/20-spea-vision-library/requisiti.tex",
-			"settings":
-			{
-				"buffer_size": 9768,
-				"line_ending": "Unix",
-				"name": "requisiti.tex"
-			}
-		},
-		{
-			"file": "chapters/20-spea-vision-library/scelte-progettuali.tex",
-			"settings":
-			{
-				"buffer_size": 4506,
-				"line_ending": "Unix",
-				"name": "scelte-progettuali.tex"
-			}
-		},
-		{
-			"file": "chapters/sommario.tex",
-			"settings":
-			{
-				"buffer_size": 150,
+				"buffer_size": 398,
 				"line_ending": "Unix"
 			}
 		},
@@ -70,7 +45,7 @@
 			"file": "preamble.tex",
 			"settings":
 			{
-				"buffer_size": 1027,
+				"buffer_size": 1397,
 				"line_ending": "Unix"
 			}
 		}
@@ -78,9 +53,13 @@
 	"build_system": "Packages/Makefile/Make.sublime-build",
 	"command_palette":
 	{
-		"height": 138.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"comme",
+				"Toggle Comment"
+			],
 			[
 				"low",
 				"Convert Case: Lower Case"
@@ -147,31 +126,41 @@
 	},
 	"expanded_folders":
 	[
-		"/home/andreaf/Documenti/tesi/tesi-polito/src",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/20-spea-vision-library"
+		"/home/andreaf/Documenti/tesi/tesi-polito/src"
 	],
 	"file_history":
 	[
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/fondamenti-di-ottica.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/machine-vision.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/image-processing.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/introduzione.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/illuminazione.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/sistemi-di-imaging.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/sensori.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/automatic-optical-inspection.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/conclusioni.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/fondamenti-di-ottica.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/00-introduzione/fondamenti-di-ottica.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/dispositivi-di-imaging.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/main.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/illuminazione.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/lenti.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/preamble.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/luce.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/tesi.sublime-project",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/stato-dell-arte.tex",
-		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/dispositivi-di-imaging.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/05-sistemi-di-imaging/sensori.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/illuminazione.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/image-processing.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/machine-learning.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/valutazione-prestazioni.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/20-spea-vision-library/architettura.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/20-spea-vision-library/dominio-applicativo.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/20-spea-vision-library/requisiti.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/20-spea-vision-library/scelte-progettuali.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/caso-di-studio.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/conclusioni.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/introduzione.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/machine-vision.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/sistemi-di-imaging.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/sommario.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/spea-vision-library.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/stato-dell-arte.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/preamble.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/Makefile",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/main.bib",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/main.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/luce.tex",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/tesi.sublime-project",
+		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/dispositivi-di-imaging.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/00-luce.tex",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/chapters/10-machine-vision/fonamenti-di-ottica",
 		"/home/andreaf/Documenti/tesi/tesi-polito/src/revision.tex",
@@ -194,9 +183,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -204,6 +194,13 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			".pdf",
+			"pdf",
+			"tesi",
+			"tesina",
+			".pdf",
+			"fowler",
+			"canny",
 			"tabular",
 			"eq",
 			"equa",
@@ -227,6 +224,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"-1.png",
 			"\\textdegree",
 			"\\theta",
 			""
@@ -240,80 +238,166 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "chapters/05-sistemi-di-imaging/illuminazione.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8347,
+						"buffer_size": 2050,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										151,
+										155
+									],
+									[
+										298,
+										302
+									],
+									[
+										466,
+										470
+									],
+									[
+										556,
+										560
+									],
+									[
+										616,
+										620
+									],
+									[
+										761,
+										765
+									],
+									[
+										971,
+										975
+									],
+									[
+										1164,
+										1168
+									],
+									[
+										1196,
+										1200
+									],
+									[
+										1555,
+										1559
+									],
+									[
+										1747,
+										1751
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								4389,
-								4389
+								1760,
+								1760
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1251.0,
+						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "chapters/automatic-optical-inspection.tex",
+					"file": "Makefile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 22688,
+						"buffer_size": 229,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22068,
-								22068
+								54,
+								54
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4347.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "chapters/spea-vision-library.tex",
-					"semi_transient": false,
+					"file": "Makefile.include",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1168,
+						"buffer_size": 4192,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								775,
-								775
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 897.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "main.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 398,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
 							]
 						],
 						"settings":
@@ -328,135 +412,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "chapters/20-spea-vision-library/dominio-applicativo.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4699,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4699,
-								4699
-							]
-						],
-						"settings":
-						{
-							"auto_name": "panoramica.tex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 546.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
 					"buffer": 4,
-					"file": "chapters/20-spea-vision-library/requisiti.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9768,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9767,
-								9767
-							]
-						],
-						"settings":
-						{
-							"auto_name": "requisiti.tex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1266.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "chapters/20-spea-vision-library/scelte-progettuali.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4506,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4506,
-								4506
-							]
-						],
-						"settings":
-						{
-							"auto_name": "scelte-progettuali.tex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 291.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "chapters/sommario.tex",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 150,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
 					"file": "preamble.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1027,
+						"buffer_size": 1397,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								96,
-								96
+								531,
+								531
 							]
 						],
 						"settings":
@@ -467,7 +436,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -515,7 +484,7 @@
 	"project": "tesi.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -523,6 +492,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"find",
+				"Find Results"
+			],
+			[
+				"auto",
+				"chapters/automatic-optical-inspection.tex"
+			],
+			[
+				"ma",
+				"Makefile"
+			],
+			[
+				"f",
+				"Find Results"
+			]
 		],
 		"width": 0.0
 	},

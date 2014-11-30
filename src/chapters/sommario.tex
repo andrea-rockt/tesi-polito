@@ -1,4 +1,31 @@
 \sommario
-Questo sarà il sommario della tesi (l'introduzione potrebbe essere ridondante a causa della presenza di questo capitolo speciale)
+
+Il seguente lavoro di tesi si è svolto all'interno del progetto di Laurea in alto Apprendistato promosso da Regione Piemonte, Politecnico di Torino e SPEA.
+L'inserimento è avvenuto all'interno del reparto di ricerca e sviluppo software con l'obiettivo di formare un team in grado di soddisfare la richiesta di sistemi sempre più pervasi da verifiche di natura ottica, ciò ha portato alla realizzazione di una libreria software adatta alla visione industriale e alla realizzazione di un ambiente di sviluppo per programmi di verifica ottica. La libreria implementata è adesso utilizzata in produzione su alcuni sistemi di collaudo e rappresenta un miglioramento su manutenibilità e aggiornabilità delle unità di visione prodotte. L'ambiente di sviluppo per test ottici realizzato durante il percorso di tesi è attualmente utilizzato da aziende nel mercato dei semiconduttori per l'affinamento, lo sviluppo e la modifica dei test ottici sulle loro linee di collaudo SPEA. 
+
+SPEA opera nel campo del collaudo automatico di dispositivi elettronici, quali microchip, schede e moduli elettronici. In particolare, SPEA progetta e realizza sofisticate apparecchiature che consentono ai produttori di dispositivi elettronici di effettuare, in maniera automatica, tutte le misure necessarie a verificare che un dispositivo elettronico funzioni correttamente. 
+
+Nel primo capitolo verrà introdotta l'ispezione ottica automatica.
+
+Nel secondo capitolo verranno descritti i sistemi di \emph{imaging}, l'esposizione comincerà con una panoramica sui sensori per l'acquisizione di immagini, interfacce di connessione disponibili e problematiche relative a differenti tipi di otturatore. Il secondo capitolo proseguirà con dei richiami di ottica e una panoramica sulle aberrazioni ottiche necessaria a comprendere come si possa applicare l'ispezione ottica con accuratezza metrologica e come sorga la necessità di applicare diverse tecniche di illuminazione.
+
+Nel terzo capitolo verrà esposto come un immagine digitalizzata possa essere elaborata da una macchina.Verrà presentata la rappresentazione digitale di un immagine e alcune tecniche di processamento delle immagini (puntuali, locali e globali). Le tecniche proposte saranno volte al miglioramento delle acquisizioni prima dell'effettiva elaborazione, il cui fine è la determinazione dell'esito dell'ispezione.
+
+Nel quarto capitolo verrà presentata l'ispezione ottica automatica con particolare attenzione alle tipologie di ispezioni ottiche attuabili nella produzione di circuiti stampati (PCB). Verranno presentati alcuni sistemi di collaudo prodotti da SPEA che integrano al loro interno funzionalità di ispezione ottica automatica (sistemi su cui è stata utilizzata la libreria oggetto dell'attività in azienda) o che utilizzino l'equipaggiamento di visione per prendere alcune decisioni sul flusso di collaudo o sull'instradamento dei dispositivi da collaudare.
+
+Nel quinto capitolo verrà presentata l'architettura della libreria di visione sviluppata corredandola con un analisi dei requisiti ed una panoramica sulle esigenze del particolare dominio applicativo e dell'industria elettronica.
+
+Nel sesto capitolo verranno presentate conclusioni e sviluppi futuri di questo lavoro.
+
+Risultato di questo lavoro di tesi è quindi una libreria software per la visione industriale adatta ad essere impiegata sui sistemi di collaudo SPEA, ciò ha portato a soddisfare con successo le seguenti esigenze:
+
+\begin{enumerate}
+\item Facilità di integrazione di nuovo hardware di visione.
+\item Interfaccia di programmazione coerente e sufficientemente generale.
+\item Tempi di esecuzione adeguati ai tempi di ciclo del sistema di collaudo.
+\item Presenza di un ambiente di sviluppo utilizzabile anche da non programmatori.
+\item Standardizzazione dell'infrastruttura di visione e quindi progressiva migrazione
+di tutti i sistemi di collaudo SPEA verso la nuova infrastruttura.
+\end{enumerate}
 
 \endinput

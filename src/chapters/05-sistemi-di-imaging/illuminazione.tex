@@ -6,18 +6,18 @@ creazione di un sistema di visione pronto e robusto \cite{doi:10.1117/12.467381}
 analisi robusto massimizzerà la riuscita del progetto in termini di tempo,
 sforzo e risorse impiegate.
 
-Storicamente, la luce è stato sempre l'ultimo aspetto ad essere specificato,
-sviluppato o finaziato, questo tipo di approccio derivava principalmente
-dall'assenza di prodotti commerciali espressamente rivolti alla machine
-vision, ciò portava all'adozioni di prodotti consumer quali lampade a
+Storicamente, la luce è stata sempre l'ultimo aspetto ad essere specificato,
+sviluppato o finanziato, questo tipo di approccio derivava principalmente
+dall'assenza di prodotti commerciali espressamente rivolti alla \emph{machine
+vision}, ciò portava all'adozione di prodotti \emph{consumer} quali lampade a
 incandescenza e/o fluorescenza.
 
 Ciò che è realmente richiesto per la realizzazione di sistemi di ispezione
-industriale è il controllo dell' illuminazione volto a produrre:
+industriale è il controllo dell'illuminazione volto a produrre:
 
 \begin{itemize}
 	\item Illuminazione appropriata dei campioni da analizzare;
-	\item Standardizzazione delle componenti, tecniche, implementazioni e dell'utilizzo del sistema di illuminazione;
+	\item Standardizzazione delle componenti, tecniche, implementazioni e utilizzo del sistema di illuminazione;
 	\item Riproducibilità dei risultati delle ispezioni;
 	\item Robustezza delle ispezioni a variazioni dell'ambiente di ispezione;
 \end{itemize} 
@@ -28,7 +28,7 @@ Un illuminatore direzionale è costituito da una o più
 sorgenti di luce puntiforme che proiettano luce direzionale 
 sulla parte da ispezionare, utilizzando questa tipologia di 
 illuminatore è possibile ispezionare superfici piane non 
-riflettenti poichè la luce raggiunge il sensore in maniera consistente. 
+riflettenti poiché la luce raggiunge il sensore in maniera consistente. 
 
 \begin{figure}
 \centering
@@ -50,11 +50,11 @@ Contro: &  Generazione di ombre e riflessi dovuti ad altri oggetti presenti sull
 Un illuminatore tangenziale è costituito da una o più 
 sorgente di luce direzionale aventi un elevato angolo di 
 incidenza rispetto alla parte da ispezionare, ciò li rende 
-adatti ad evidenziare difetti superficiali dell’oggetto che 
-appaiono evidenziati sull’immagine.  
-Tale metodologia e applicata con successo all’ispezione di 
+adatti ad evidenziare difetti superficiali dell'oggetto che 
+appaiono evidenziati sull'immagine.  
+Tale metodologia e applicata con successo all'ispezione di 
 componenti marcati con tecnologia DPM ( Direct Part 
-Marking ) laser poichè la superficie incisa risulta evidenziata 
+Marking ) laser poiché la superficie incisa risulta evidenziata 
 da questo tipo di illuminatore 
 
 \begin{figure}
@@ -67,20 +67,20 @@ da questo tipo di illuminatore
 \centering
 \begin{tabular}{l l}
 Pro: &  Evidenziamento della struttura superficiale dell'oggetto da ispezionare. \\
-Contro: &  Punti lumininosi ed eccessiva generazione di ombre \\
+Contro: &  Punti luminosi ed eccessiva generazione di ombre \\
 \end{tabular}
 \end{centering}
 
 
 \subsection{Illuminazione diffusa}
-Un illuminatore tangenziale è costituito da sorgente di luce 
-diffusa ed estesa ciò li rende adatti nell’ispezione di parti 
+Un illuminatore diffuso è costituito da sorgente di luce 
+diffusa ed estesa ciò li rende adatti nell'ispezione di parti 
 che potrebbero creare riflessi illuminando in maniera 
-omogenea e consistente l’area di ispezione, sono tuttav ia 
+omogenea e consistente l'area di ispezione.Tali illuminatori sono, tuttavia, 
 di difficile impiego in contesti dove gli ingombri sono 
-ridotti per via delle grandi dimensioni ( Una sorgente di 
+ridotti per via delle loro grandi dimensioni ( una sorgente di 
 luce diffusa viene realizzata posizionando sorgenti di luce 
-puntiforme lontano dall’area di ispezione )  
+puntiforme lontano dall'area di ispezione )  
  
 
 \begin{figure}
@@ -101,9 +101,9 @@ Contro: &  Grandi dimensioni, difficoltà di realizzazione \\
 \subsection{Illuminazione anulare}
 Un illuminatore anulare è costituito da più sorgenti di luce 
 puntiformi disposte coassialmente al dispositivo di 
-imaging, ciò li rende adatti ad un ispezione simile a quelle 
-possibili per mezzo di luce diffusa ma ne limita l’area 
-ispezionata e la distanza di esercizio, tale tipologia di 
+\emph{imaging}, ciò li rende adatti ad un ispezione simile a quelle 
+possibili per mezzo di luce diffusa ma ne limita l'area 
+ispezionata e la distanza di esercizio. Tale tipologia di 
 illuminazione produce inoltre fastidiosi riflessi circolari 
 (rumore) 
  
@@ -126,12 +126,12 @@ Contro: &  Distanze di impiego limitate, riflessi circolari su superfici riflett
 \subsection{Illuminazione diffusa assiale}
 Un illuminatore diffuso assiale  è costituito da una 
 sorgente di luce puntiforme direzionale orientata 
-perpendicolarmente all’oggetto da ispezionare, tale luce 
-colpisce un beam splitter riflettendosi prima sulla parte da 
-ispezionare e poi sul dispositivo di imagin, ciò crea una 
-luce diffusa senza riflessi circolari ma gli  ingombri di 
+perpendicolarmente all'oggetto da ispezionare, tale luce 
+colpisce un \emph{beam splitter} riflettendosi prima sulla parte da 
+ispezionare e poi sul dispositivo di \emph{imaging}; ciò crea una 
+luce diffusa senza riflessi circolari, ma gli  ingombri di 
 questi sistemi e la distanza di esercizio limitata ne 
-vincolano l’utilizzo 
+vincolano l'utilizzo. 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=.3\textwidth]{img/illuminazione-diffusa-assiale.jpg}
@@ -151,7 +151,7 @@ Contro: &  Dimensioni elevate, difficile montaggio, bassa efficienza.\\
 
 \subsection{Illuminazione strutturata}
 Un illuminatore a luce strutturata è costituito da una sorgente che proietta
-pattern geometrici quali, linee, punti, griglie o cerchi, tale struttura della
+\emph{pattern} geometrici quali linee, punti, griglie o cerchi. Tale struttura della
 luce può evidenziare curvature o altri difetti dei materiali o essere utile 
 per effettuare misure basate sulla distorsione dei motivi proiettati.
 
@@ -166,7 +166,7 @@ per effettuare misure basate sulla distorsione dei motivi proiettati.
 \begin{centering}
 
 \begin{tabularx}{\textwidth}{l p{.8\textwidth}}
-Pro: &  Genera un elevata luminosità su piccole arre di interesse, possibilità di misurare la profondità.\\
+Pro: &  Genera un elevata luminosità su piccole aree di interesse, possibilità di misurare la profondità.\\
 Contro: &  Può causare riflessi ed è assorbita da alcuni colori.\\
 \end{tabularx}
 \end{centering}
@@ -191,8 +191,8 @@ Contro: &  Diminuisce l'efficienza del sistema di illuminazione.\\
 \end{centering}
 
 \subsection{Illuminazione dark-field}
-Un illuminatore dark-field è costituito da una sorgente direzionale di luce posizionata perpendicolarmente
-alla lente, la luce penetra così un oggetto traslucente attraverso i bordi
+Un illuminatore \emph{dark-field} è costituito da una sorgente direzionale di luce posizionata perpendicolarmente
+alla lente; la luce penetra così un oggetto traslucente attraverso i bordi
 
 \begin{figure}[!h]
 \centering
@@ -209,7 +209,7 @@ Contro: &  Basso contrasto sui bordi, non funziona su oggetti opachi.\\
 \end{centering}
 
 \subsection{Retroilluminazione (bright-field).}
-Un illuminatore bright-field è costituito da una sorgente di luce posta sul retro dell'oggetto da ispezionare,
+Un illuminatore \emph{bright-field} è costituito da una sorgente di luce posta sul retro dell'oggetto da ispezionare,
 ciò può essere utile per evidenziarne i contorni a scopo di misura o per osservare dettagli in un oggetto
 trasparente 
 

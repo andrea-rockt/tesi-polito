@@ -5,9 +5,9 @@ Finita l'analisi dei requisiti è necessario cominciare a costruire uno stack di
 
 \subsection{Linguaggio di programmazione}
 
-Lo sviluppo in ambito industriale prevede bassi tempi di integrazione e di sviluppo del software ma contemporaneamente alte prestazioni in elaborazione, le due esigenze si ritrovano fortemente in disaccordo tra loro, è proprio per questo che nella realizzazione di questa libreria di visione si è considerato di utilizzare una programmazione di tipo poliglotta, ovvero basata su differenti linguaggi di programmazione.
-Il linguaggio di programmazione selezionato per la realizzazione dello strato client della libreria è il C\#, linguaggio gestito della famiglia dei linguaggi aventi come target il runtime .net, spesso guardato con sospetto per la realizzazione di sistemi ad alte performance funge ottimamente da collante per la gestione ad alto livello dei task di visione, esso è utilizzato per la realizzazione delle componenti grafiche e dell'infrastruttura orientata agli oggetti.
-Il linguaggio di programmazione selezionato per la realizzazione dello strato di processamento della libreria è il c++, grazie alla presenza delle estensioni microsoft c++/cli risulta semplice da integrare nell'infrastruttura gestita del runtime .net e la disponibilità di librerie di image processing realizzate in c++ o che forniscono dei bindings verso di esso rappresenta un vantaggio considerevole
+Lo sviluppo in ambito industriale prevede bassi tempi di integrazione e di sviluppo delle applicazioni di test, ma contemporaneamente alte prestazioni di elaborazione. Le due esigenze si ritrovano fortemente in disaccordo tra loro, è proprio per questo che nella realizzazione del lavoro oggetto di tesi si è considerato di utilizzare una programmazione di tipo poliglotta, ovvero basata su differenti linguaggi di programmazione.
+Il linguaggio di programmazione selezionato per la realizzazione dello strato client della libreria è il C\#, linguaggio gestito appartenente famiglia dei linguaggi aventi come target il runtime \emph{.net}. I linguaggi gestiti sono spesso evitati per la realizzazione di sistemi ad alte performance ma  possono essere utilizzati per esporre lo strato di livello più alto in modo che la programmazione sia rapida. Il linguaggio C\#  è utilizzato per la realizzazione delle componenti grafiche e dell'infrastruttura orientata agli oggetti.
+Il linguaggio di programmazione selezionato per la realizzazione dello strato di processamento della libreria è il c++, grazie alla presenza delle estensioni microsoft c++/cli risulta semplice da integrare nell'infrastruttura gestita del runtime .net e la disponibilità di librerie di image processing realizzate in c++ o che forniscono dei bindings verso di esso rappresenta un vantaggio considerevole.
 
 \subsection{Tecnologie utilizzate}
 
@@ -26,10 +26,10 @@ Tale toolkit grafico è stato selezionato per essere utilizzato nella realizzazi
 Il framework OpenCV nasce da una iniziativa dell’Intel, mentre lavorava
 su miglioramenti delle loro CPU per applicazioni intensive, ad esempio
 ray-tracing in tempo reale e proiezione 3D. Uno degli addetti della Intel,
-aveva notato come in molte universit\`{a}, tra cui il MIT Media Lab fosse stato realizzato un framework di visione, il cui codice era passato
+aveva notato come in molte università, tra cui il MIT Media Lab fosse stato realizzato un framework di visione, il cui codice era passato
 da studente a studente. A tal proposito si decise di iniziare, a partire da
 questo codice, un framework per la computer vision ottimizzato per i processori Intel. Il
 primo avvio di tale progetto, con la collaborazione di un team Intel russo,
 fu nel 1999. la prima release ufficiale di OpenCV risale, invece, al 2006.
-Opencv è stato selezionato per la disponibilità di un elevato numero di primitive di image processing, l'ottimizzazione degli algoritmi tramite librerie per il calcolo, la disponibiltà del supporto al gpu computing e la genericità e flessibilità del modello di programmazione dallo stile modern c++.
+Opencv è stato selezionato per la disponibilità di un elevato numero di primitive di image processing, l'ottimizzazione degli algoritmi tramite librerie per il calcolo, la disponibilità del supporto al gpu computing e la genericità e flessibilità del modello di programmazione dallo stile modern c++.
 
